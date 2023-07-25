@@ -1,7 +1,7 @@
 {
-  "name": "naive-ui",
-  "version": "2.34.4",
-  "description": "A Vue 3 Component Library. Fairly Complete, Theme Customizable, Uses TypeScript, Fast",
+  "name": "ithinkdt-ui",
+  "version": "1.0.0-0",
+  "description": "Fork from Naive UI. A Vue 3 Component Library. Fairly Complete, Theme Customizable, Uses TypeScript, Fast",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
@@ -36,7 +36,12 @@
     "transpile-docs": "node scripts/md-to-vue data-table",
     "release:site": "TUSIMPLE=true pnpm run build:site && node build-doc/generate-deploy-sh.js && sudo bash build-doc/deploy-doc.sh"
   },
-  "author": "07akioni",
+  "author": "liuzw2579",
+  "--homepage": "https://www.naiveui.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liuzw2579/naive-ui"
+  },
   "license": "MIT",
   "files": [
     "es",
@@ -163,11 +168,6 @@
     "vueuc": "^0.4.51"
   },
   "sideEffects": false,
-  "homepage": "https://www.naiveui.com",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tusen-ai/naive-ui"
-  },
   "keywords": [
     "naive-ui",
     "component library",
