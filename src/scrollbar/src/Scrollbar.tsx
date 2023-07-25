@@ -1,3 +1,4 @@
+import { type ExtractPropTypes } from 'vue'
 import { NScrollbar, type ScrollbarTheme } from '../../_internal/scrollbar'
 
 import { type ThemeProps } from '../../_mixins'
@@ -15,7 +16,7 @@ export interface ScrollbarInst {
 }
 
 export type ScrollbarProps = Pick<
-ThemeProps<ScrollbarTheme>,
+ExtractPropTypes<ThemeProps<ScrollbarTheme>>,
 'themeOverrides'
 > & {
   size?: number
