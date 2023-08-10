@@ -12,7 +12,7 @@ import {
 } from 'vue'
 import type { PropType, CSSProperties, VNode, HTMLAttributes } from 'vue'
 import { on, off } from 'evtd'
-import { VResizeObserver } from 'vueuc'
+import { resizeObserverManager } from 'vueuc'
 import { useIsIos } from 'vooks'
 import { getPreciseEventTarget } from 'seemly'
 import { useConfig, useTheme, useThemeClass, useRtl } from '../../../_mixins'
@@ -624,9 +624,25 @@ const Scrollbar = defineComponent({
       // however, when scrollbar is mounted, ref is not ready at component
       // you need to init by yourself
       if (props.container) return
+      wrapperRef.value &&
+        resizeObserverManager.registerHandler(
+          wrapperRef.value,
+          handleContainerResize
+        )
+      contentRef.value &&
+        resizeObserverManager.registerHandler(
+          contentRef.value,
+          handleContentResize
+        )
       sync()
     })
     onBeforeUnmount(() => {
+      if (!props.container) {
+        wrapperRef.value &&
+          resizeObserverManager.unregisterHandler(wrapperRef.value)
+        contentRef.value &&
+          resizeObserverManager.unregisterHandler(contentRef.value)
+      }
       if (xBarVanishTimerId !== undefined) {
         window.clearTimeout(xBarVanishTimerId)
       }
@@ -780,30 +796,24 @@ const Scrollbar = defineComponent({
               onScroll={this.handleScroll}
               onWheel={this.onWheel}
             >
-              <VResizeObserver onResize={this.handleContentResize}>
-                {{
-                  default: () => (
-                    <div
-                      ref="contentRef"
-                      role="none"
-                      style={
-                        [
-                          {
-                            width: this.xScrollable ? 'fit-content' : null
-                          },
-                          this.contentStyle
-                        ] as any
-                      }
-                      class={[
-                        `${mergedClsPrefix}-scrollbar-content`,
-                        this.contentClass
-                      ]}
-                    >
-                      {$slots}
-                    </div>
-                  )
-                }}
-              </VResizeObserver>
+              <div
+                ref="contentRef"
+                role="none"
+                style={
+                  [
+                    {
+                      width: this.xScrollable ? 'fit-content' : null
+                    },
+                    this.contentStyle
+                  ] as any
+                }
+                class={[
+                  `${mergedClsPrefix}-scrollbar-content`,
+                  this.contentClass
+                ]}
+              >
+                {$slots}
+              </div>
             </div>
           ),
           internalHoistYRail ? null : createYRail(undefined),
@@ -841,15 +851,7 @@ const Scrollbar = defineComponent({
         ]
       )
     }
-    const scrollbarNode = this.container ? (
-      createChildren()
-    ) : (
-      <VResizeObserver onResize={this.handleContainerResize}>
-        {{
-          default: createChildren
-        }}
-      </VResizeObserver>
-    )
+    const scrollbarNode = createChildren()
     if (internalHoistYRail) {
       return (
         <Fragment>
