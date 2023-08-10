@@ -10,14 +10,14 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    if: github.repository == 'TuSimple/naive-ui'
+    if: github.repository == 'liuzw2579/naive-ui'
     steps:
       - name: mirror
         continue-on-error: true
         if: github.event_name == 'push' || (github.event_name == 'create' && github.event.ref_type == 'tag')
         uses: wearerequired/git-mirror-action@v1.2.0
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.CODEUP_SSH_PRIVATE_KEY }}
         with:
-          source-repo: 'git@github.com:TuSimple/naive-ui.git'
-          destination-repo: 'git@gitee.com:naive-ui/naive-ui.git'
+          source-repo: 'git@github.com:liuzw2579/naive-ui.git'
+          destination-repo: 'git@codeup.aliyun.com:ithinkdt-code/ithinkdt-cloud/ithinkdt-ui.git'
