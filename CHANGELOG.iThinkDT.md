@@ -2,6 +2,10 @@
 
 ## Next Version
 
+### Features
+
+- `n-upload` 新增 `img-props` `previewed-img-props` 属性
+
 ## 1.0.3 [naive: 2.35.0] (2023-10-03)
 
 - 同步 naive-ui `2.35.0`

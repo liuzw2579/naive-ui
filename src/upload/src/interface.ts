@@ -1,4 +1,9 @@
-import { type Ref, type CSSProperties, type VNodeChild } from 'vue'
+import {
+  type Ref,
+  type CSSProperties,
+  type VNodeChild,
+  type ImgHTMLAttributes
+} from 'vue'
 import { type ImageGroupProps } from '../../image'
 import type { MergedTheme } from '../../_mixins'
 import { createInjectionKey } from '../../_utils'
@@ -94,6 +99,8 @@ export interface UploadInjection {
   maxReachedRef: Ref<boolean>
   abstractRef: Ref<boolean>
   imageGroupPropsRef: Ref<ImageGroupProps | undefined>
+  imgPropsRef: Ref<ImgHTMLAttributes | undefined>
+  previewedImgPropsRef: Ref<ImgHTMLAttributes | undefined>
   cssVarsRef: undefined | Ref<CSSProperties>
   themeClassRef: undefined | Ref<string>
   mergedDirectoryDndRef: Ref<boolean>
