@@ -1,6 +1,6 @@
 # 按需引入（Tree Shaking）
 
-Naive UI 支持 tree shaking，组件、语言、主题均可 tree-shaking。
+iThinkDT UI 支持 tree shaking，组件、语言、主题均可 tree-shaking。
 
 默认情况组件主题为亮色，语言为英文，无需额外导入。
 

@@ -40,7 +40,7 @@ ithinkdt-ui 建议使用 [xicons](https://www.xicons.org) 作为图标库。
       target="_blank"
       icon-placement="right"
     >
-      Naive UI (Sketch)
+      iThinkDT UI (Sketch)
       <template #icon>
         <n-icon >
           <ArrowDownload16Regular />

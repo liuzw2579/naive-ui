@@ -2,7 +2,7 @@
 
 # 调整主题
 
-Naive UI 通过使用 `n-config-provider` 调整主题。
+iThinkDT UI 通过使用 `n-config-provider` 调整主题。
 
 默认情况下所有组件均为亮色主题，无需任何配置。
 
@@ -45,7 +45,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 具体可使用变量请参考 `GlobalThemeOverrides` 类型提示。
 
-如果想要查看更多的主题变量，可在 Naive UI 主页的右下角的 edit 按钮查看。
+如果想要查看更多的主题变量，可在 iThinkDT UI 主页的右下角的 edit 按钮查看。
 
 可以修改对应的主题变量，导出后可以拿到 themeOverrides 对象。
 

@@ -60,8 +60,8 @@ export function createDocumentationMenuOptions ({ lang, theme, mode }) {
       type: 'group',
       children: [
         {
-          en: 'Naive UI',
-          zh: 'Naive UI',
+          en: 'iThinkDT UI',
+          zh: 'iThinkDT UI',
           path: '/introduction'
         }
       ]

@@ -40,7 +40,7 @@ ithinkdt-ui recommends using [xicons](https://www.xicons.org) as icon library.
       target="_blank"
       icon-placement="right"
     >
-      Naive UI (Sketch)
+      iThinkDT UI (Sketch)
       <template #icon>
         <n-icon >
           <ArrowDownload16Regular />

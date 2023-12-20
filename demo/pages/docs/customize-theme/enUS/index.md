@@ -45,7 +45,7 @@ Set `n-config-provider`'s `theme-overrides` to customize theme vars. ithinkdt-ui
 
 For available vars please follow the type hint of `GlobalThemeOverrides`.
 
-If you want to view more theme variables, you can view them in the edit button at the bottom right corner of the Naive UI homepage.
+If you want to view more theme variables, you can view them in the edit button at the bottom right corner of the iThinkDT UI homepage.
 
 You can modify the corresponding theme variable, you can get the themeOverrides object after export.
 

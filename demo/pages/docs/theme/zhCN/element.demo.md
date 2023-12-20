@@ -1,6 +1,6 @@
 # 使用元素组件
 
-Naive UI 提供 `n-element` 组件，参考 [Element](../components/element)。
+iThinkDT UI 提供 `n-element` 组件，参考 [Element](../components/element)。
 
 ```html
 <n-space vertical>

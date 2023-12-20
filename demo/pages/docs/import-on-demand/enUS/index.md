@@ -1,6 +1,6 @@
 # Import on Demand (Tree Shaking)
 
-Naive UI supports tree shaking for components, locales and themes.
+iThinkDT UI supports tree shaking for components, locales and themes.
 
 By default the component theme is light, locale is enUS, and no extra imports are needed.
 

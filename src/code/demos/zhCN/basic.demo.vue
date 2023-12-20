@@ -18,7 +18,7 @@ function sleep (ms = 1000) {
       <n-code
         :code="`
 def say_hello():
-    print('Hello Naive UI')
+    print('Hello iThinkDT UI')
 `"
         language="python"
       />
@@ -34,7 +34,7 @@ export default defineComponent({
   setup () {
     return {
       cppCode: `int main () {
-  std::cout << "Hello Naive UI";
+  std::cout << "Hello iThinkDT UI";
   return 0;
 }`
     }
