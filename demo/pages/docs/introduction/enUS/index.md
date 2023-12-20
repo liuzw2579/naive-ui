@@ -2,7 +2,7 @@
 
 # iThinkDT UI
 
-iThinkDT UI is a Vue 3 component library.
+iThinkDT UI is a Vue 3 component library (Focked Naive UI).
 
 To know how to install it, see [Installation](installation).
 

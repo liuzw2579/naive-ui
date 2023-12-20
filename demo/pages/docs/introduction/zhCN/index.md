@@ -2,7 +2,7 @@
 
 # iThinkDT UI
 
-iThinkDT UI 是一个 Vue3 的组件库。
+iThinkDT UI 是一个 Vue3 的组件库（Focked Naive UI）。
 
 要了解如何安装，参见[安装](installation)。
 
