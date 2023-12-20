@@ -112,7 +112,7 @@ const formatConfigs = {
  * @returns {string | null}
  */
 const parseSource = (source, currentDir, suffix) => {
-  if (source.startsWith('.')) {
+  if (source[0] === '.') {
     const fullPath = joinPath(currentDir, source)
     return fs.existsSync(fullPath)
       ? path.extname(fullPath)
@@ -147,7 +147,12 @@ const guessFullPath = (pkgName, subpath) => {
   } else if (fs.existsSync(path.join(sourcePath, 'index.mjs'))) {
     parsedSource = joinPath(pkgName, subpath, 'index.mjs')
   }
-  return parsedSource
+  try {
+    parsedSource && require(parseSource)
+    return parsedSource
+  } catch {
+    return null
+  }
 }
 
 const splitSource = (() => {

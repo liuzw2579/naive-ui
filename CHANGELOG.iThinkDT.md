@@ -2,6 +2,11 @@
 
 ## Next Version
 
+## 1.1.1 [naive: 2.36.0] (2023-12-20)
+
+- 同步 naive-ui `2.36.0`
+- 替换 `naive-ui` -> `ithinkdt-ui`
+
 ### Features
 
 - `n-upload` 新增 `img-props` `previewed-img-props` 属性
