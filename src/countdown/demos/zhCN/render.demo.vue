@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { CountdownProps } from 'naive-ui'
+import { CountdownProps } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

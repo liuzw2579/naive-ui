@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { SelectOption } from 'naive-ui'
+import { SelectOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

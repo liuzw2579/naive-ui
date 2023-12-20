@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { NTreeSelect } from 'naive-ui'
+import { NTreeSelect } from 'ithinkdt-ui'
 
 export default defineComponent({
   name: 'App',

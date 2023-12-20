@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, h } from 'vue'
-import { useMessage, useDialog, unstableDialogRtl, NButton } from 'naive-ui'
+import { useMessage, useDialog, unstableDialogRtl, NButton } from 'ithinkdt-ui'
 
 const DialogButton = defineComponent({
   setup () {

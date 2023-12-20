@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, h } from 'vue'
-import { useMessage, NButton, unstableMessageRtl } from 'naive-ui'
+import { useMessage, NButton, unstableMessageRtl } from 'ithinkdt-ui'
 
 const MessageButton = defineComponent({
   setup () {

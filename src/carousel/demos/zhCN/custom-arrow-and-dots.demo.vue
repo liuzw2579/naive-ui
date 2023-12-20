@@ -6,19 +6,19 @@
   <n-carousel show-arrow autoplay>
     <img
       class="carousel-img"
-      src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
+      src="https://ithinkdt-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
     >
     <img
       class="carousel-img"
-      src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
+      src="https://ithinkdt-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
     >
     <img
       class="carousel-img"
-      src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
+      src="https://ithinkdt-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
     >
     <img
       class="carousel-img"
-      src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+      src="https://ithinkdt-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
     >
     <template #arrow="{ prev, next }">
       <div class="custom-arrow">
@@ -109,7 +109,9 @@ export default defineComponent({
   margin: 0 3px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.4);
-  transition: width 0.3s, background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    width 0.3s,
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 

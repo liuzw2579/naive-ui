@@ -40,7 +40,7 @@ components: {
 </script>`
 
 const mainJs = `import { createApp } from "vue";
-import naive from "naive-ui";
+import naive from "ithinkdt-ui";
 import App from "./App.vue";
 
 const app = createApp(App);
@@ -68,7 +68,7 @@ export function getCodeSandboxParams (code) {
             ...getDeps(code),
             vue: 'next',
             'vue-router': 'next',
-            'naive-ui': 'latest'
+            'ithinkdt-ui': 'latest'
           },
           devDependencies: {
             '@vue/cli-plugin-babel': '~4.5.0',

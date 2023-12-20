@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watchEffect, onMounted, nextTick } from 'vue'
-import { LogInst } from 'naive-ui'
+import { LogInst } from 'ithinkdt-ui'
 
 function log () {
   const l: string[] = []

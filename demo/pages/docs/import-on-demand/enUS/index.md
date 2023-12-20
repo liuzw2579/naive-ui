@@ -11,11 +11,11 @@ For more info about theming, see [Customizing Theme](customize-theme).
 ```html
 <script>
   import { defineComponent } from 'vue'
-  import { NConfigProvider, NInput, NDatePicker, NSpace } from 'naive-ui'
+  import { NConfigProvider, NInput, NDatePicker, NSpace } from 'ithinkdt-ui'
   // theme
-  import { createTheme, inputDark, datePickerDark } from 'naive-ui'
+  import { createTheme, inputDark, datePickerDark } from 'ithinkdt-ui'
   // locale & dateLocale
-  import { zhCN, dateZhCN } from 'naive-ui'
+  import { zhCN, dateZhCN } from 'ithinkdt-ui'
 
   export default defineComponent({
     components: {
@@ -72,7 +72,7 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          'naive-ui': [
+          'ithinkdt-ui': [
             'useDialog',
             'useMessage',
             'useNotification',
@@ -97,7 +97,7 @@ import {
   create,
   // component
   NButton
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 const naive = create({
   components: [NButton]
@@ -111,6 +111,6 @@ After the installation, you can use the components you installed in SFC like thi
 
 ```html
 <template>
-  <n-button>naive-ui</n-button>
+  <n-button>ithinkdt-ui</n-button>
 </template>
 ```

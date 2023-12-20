@@ -22,7 +22,7 @@ import {
   NTooltip,
   DropdownOption,
   DropdownGroupOption
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

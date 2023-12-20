@@ -6,11 +6,7 @@ Steps has `small`, `medium` size.
 
 <template>
   <n-space vertical>
-    <n-steps
-      size="small"
-      :current="(current as number)"
-      :status="currentStatus"
-    >
+    <n-steps size="small" :current="current as number" :status="currentStatus">
       <n-step
         title="I Me Mine"
         description="All through the day, I me mine I me mine, I me mine"
@@ -66,7 +62,7 @@ Steps has `small`, `medium` size.
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { MdArrowRoundBack, MdArrowRoundForward } from '@vicons/ionicons4'
-import { StepsProps } from 'naive-ui'
+import { StepsProps } from 'ithinkdt-ui'
 
 export default defineComponent({
   components: {

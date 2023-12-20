@@ -17,7 +17,7 @@ import 'vfonts/FiraCode.css'
 // ...
 ```
 
-Note: Different fonts from vfonts have different font weights. If you want to use `Lato` or `OpenSans` you need to configure the global font weight of naive-ui.
+Note: Different fonts from vfonts have different font weights. If you want to use `Lato` or `OpenSans` you need to configure the global font weight of ithinkdt-ui.
 
 ```html
 <!-- configuring the global font weight -->

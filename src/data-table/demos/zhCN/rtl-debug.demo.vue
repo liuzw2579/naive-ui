@@ -34,7 +34,7 @@ import {
   unstableDataTableRtl,
   unstableInternalSelectMenuRtl,
   unstableInternalSelectionRtl
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 type Row = {
   key: number

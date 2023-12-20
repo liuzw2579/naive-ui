@@ -59,7 +59,7 @@ import {
   FormValidationError,
   useMessage,
   FormRules
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 interface ModelType {
   age: string | null

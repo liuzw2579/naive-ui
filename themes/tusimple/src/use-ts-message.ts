@@ -1,9 +1,5 @@
-import { useMessage as _useMessage } from 'naive-ui'
-import type {
-  MessageOptions,
-  MessageReactive,
-  MessageApi
-} from 'naive-ui'
+import { useMessage as _useMessage } from 'ithinkdt-ui'
+import type { MessageOptions, MessageReactive, MessageApi } from 'ithinkdt-ui'
 import { icons } from './icons'
 
 export interface ExtendedApi {

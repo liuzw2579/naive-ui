@@ -37,8 +37,8 @@
 
 <script lang="ts">
 import { h, ref, defineComponent } from 'vue'
-import { NIcon } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
+import type { MenuOption } from 'ithinkdt-ui'
 import { BookmarkOutline, CaretDownOutline } from '@vicons/ionicons5'
 
 const menuOptions: MenuOption[] = [

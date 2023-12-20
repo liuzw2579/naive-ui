@@ -41,7 +41,7 @@ import {
   NTag,
   SelectRenderTag,
   SelectRenderLabel
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

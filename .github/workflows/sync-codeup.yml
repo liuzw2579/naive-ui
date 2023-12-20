@@ -10,7 +10,7 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    if: github.repository == 'liuzw2579/naive-ui'
+    if: github.repository == 'liuzw2579/ithinkdt-ui'
     steps:
       - name: mirror
         continue-on-error: true
@@ -19,5 +19,5 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.CODEUP_SSH_PRIVATE_KEY }}
         with:
-          source-repo: 'git@github.com:liuzw2579/naive-ui.git'
+          source-repo: 'git@github.com:liuzw2579/ithinkdt-ui.git'
           destination-repo: 'git@codeup.aliyun.com:ithinkdt-code/ithinkdt-cloud/ithinkdt-ui.git'

@@ -8,7 +8,7 @@ Naive UI 提供 `useThemeVars`，它包含了常见的主题变量。
 
 ```js
 import { defineComponent } from 'vue'
-import { useThemeVars } from 'naive-ui'
+import { useThemeVars } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

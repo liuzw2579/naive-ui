@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { repeat } from 'seemly'
-import { unstableTreeRtl, TreeOption } from 'naive-ui'
+import { unstableTreeRtl, TreeOption } from 'ithinkdt-ui'
 
 function createData (level = 4, baseKey = ''): TreeOption[] | undefined {
   if (!level) return undefined

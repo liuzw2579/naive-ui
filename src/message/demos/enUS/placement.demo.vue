@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { defineComponent, h, ref, VNode } from 'vue'
-import { useMessage, NButton } from 'naive-ui'
-import type { MessageProviderProps } from 'naive-ui'
+import { useMessage, NButton } from 'ithinkdt-ui'
+import type { MessageProviderProps } from 'ithinkdt-ui'
 
 interface Item {
   placement: MessageProviderProps['placement']

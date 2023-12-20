@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { ref } from 'vue'
-import { NSpace, NButton, NModal, NImage } from 'naive-ui'
+import { NSpace, NButton, NModal, NImage } from 'ithinkdt-ui'
 
 export default {
   name: 'App',

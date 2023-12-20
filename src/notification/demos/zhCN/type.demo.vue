@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { useNotification, NotificationType } from 'naive-ui'
+import { useNotification, NotificationType } from 'ithinkdt-ui'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

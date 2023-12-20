@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "naive-ui": ["./src"]
+      "ithinkdt-ui": ["./src"]
     },
     "strict": true,
     "strictNullChecks": true,

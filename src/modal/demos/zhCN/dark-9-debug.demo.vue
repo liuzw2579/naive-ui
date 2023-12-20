@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { h, defineComponent } from 'vue'
-import { DataTableColumns } from 'naive-ui'
+import { DataTableColumns } from 'ithinkdt-ui'
 import { repeat } from 'seemly'
 
 const columns: DataTableColumns<{

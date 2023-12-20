@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { CountdownInst } from 'naive-ui'
+import { CountdownInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

@@ -15,7 +15,7 @@
     trigger="manual"
     placement="bottom-start"
     :show="showDropdown"
-    :options="(options as any)"
+    :options="options as any"
     :x="x"
     :y="y"
     @select="handleSelect"
@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { repeat } from 'seemly'
-import { TreeOption, useMessage, DropdownOption } from 'naive-ui'
+import { TreeOption, useMessage, DropdownOption } from 'ithinkdt-ui'
 
 function createData (level = 4, baseKey = ''): TreeOption[] | undefined {
   if (!level) return undefined

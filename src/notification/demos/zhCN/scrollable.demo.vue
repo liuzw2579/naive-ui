@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { useNotification } from 'naive-ui'
+import { useNotification } from 'ithinkdt-ui'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -19,7 +19,7 @@ export default defineComponent({
     const notification = useNotification()
     return {
       handleClick () {
-        [1, 2, 3, 4, 5].forEach(() =>
+        ;[1, 2, 3, 4, 5].forEach(() =>
           notification.create({
             title: '很多个通知',
             content: `试着滚起来

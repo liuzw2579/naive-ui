@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { h, ref, defineComponent } from 'vue'
-import { NAvatar, useNotification, NotificationReactive } from 'naive-ui'
+import { NAvatar, useNotification, NotificationReactive } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

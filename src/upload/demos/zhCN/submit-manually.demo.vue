@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import type { UploadInst, UploadFileInfo } from 'naive-ui'
+import type { UploadInst, UploadFileInfo } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

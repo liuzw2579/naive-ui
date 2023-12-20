@@ -73,7 +73,7 @@ dynamic.vue
 | --- | --- | --- | --- | --- |
 | feedback | `string` | `undefined` | The feedback message of the form item. If set, it will replace any result of rule-based validation. |  |
 | first | `boolean` | `false` | Whether to only show the first validation error message. |  |
-| ignore-path-change | `boolean` | `false` | Usually, changing `path` will cause a re-render and naive-ui will clear the validation result. Setting `ignore-path-change` to `true` will disable that behavior. |  |
+| ignore-path-change | `boolean` | `false` | Usually, changing `path` will cause a re-render and ithinkdt-ui will clear the validation result. Setting `ignore-path-change` to `true` will disable that behavior. |  |
 | label | `string` | `undefined` | Label. |  |
 | label-align | `'left' \| 'right'` | `undefined` | Text alignment inside the label. If not set, it will inherit the parent form's `label-align`. |  |
 | label-placement | `'left' \| 'top'` | `undefined` | If not set, it will inherit the parent form's `label-placement`. |  |

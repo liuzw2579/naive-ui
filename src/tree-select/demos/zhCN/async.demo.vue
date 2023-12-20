@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { TreeSelectOption } from 'naive-ui'
+import { TreeSelectOption } from 'ithinkdt-ui'
 
 function getChildren (option: TreeSelectOption) {
   const children = []

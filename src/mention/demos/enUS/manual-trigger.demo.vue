@@ -15,7 +15,7 @@ You may want to trigger `focus` and `blur` manually?
 
 <script lang="ts">
 import { defineComponent, h, ref, VNodeChild } from 'vue'
-import { NIcon, MentionOption, MentionInst } from 'naive-ui'
+import { NIcon, MentionOption, MentionInst } from 'ithinkdt-ui'
 import { HomeOutline as HomeIcon } from '@vicons/ionicons5'
 
 export default defineComponent({

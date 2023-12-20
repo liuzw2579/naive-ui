@@ -11,7 +11,7 @@ Auto close.
 </template>
 
 <script lang="ts">
-import { useNotification } from 'naive-ui'
+import { useNotification } from 'ithinkdt-ui'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

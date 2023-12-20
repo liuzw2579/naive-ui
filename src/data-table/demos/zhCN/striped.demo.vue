@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { DataTableColumns } from 'naive-ui'
+import type { DataTableColumns } from 'ithinkdt-ui'
 
 type RowData = {
   key: number

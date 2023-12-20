@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useMessage, MessageReactive, MessageType } from 'naive-ui'
+import { useMessage, MessageReactive, MessageType } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

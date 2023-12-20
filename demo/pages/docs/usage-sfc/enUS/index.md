@@ -12,12 +12,12 @@ If you want to know how to import themes and locales, please see [Import on Dema
 
 ```html
 <template>
-  <n-button>naive-ui</n-button>
+  <n-button>ithinkdt-ui</n-button>
 </template>
 
 <script>
   import { defineComponent } from 'vue'
-  import { NButton } from 'naive-ui'
+  import { NButton } from 'ithinkdt-ui'
 
   export default defineComponent({
     components: {
@@ -31,11 +31,11 @@ If you can use vue setup script, you can use it like this.
 
 ```html
 <template>
-  <n-button>naive-ui</n-button>
+  <n-button>ithinkdt-ui</n-button>
 </template>
 
 <script setup>
-  import { NButton } from 'naive-ui'
+  import { NButton } from 'ithinkdt-ui'
 </script>
 ```
 
@@ -49,7 +49,7 @@ If you want to install globally but don't want all components, please see [Impor
 
 ```js
 import { createApp } from 'vue'
-import naive from 'naive-ui'
+import naive from 'ithinkdt-ui'
 
 const app = createApp(App)
 app.use(naive)
@@ -59,7 +59,7 @@ After the installation, you can use all the components in your SFC like this.
 
 ```html
 <template>
-  <n-button>naive-ui</n-button>
+  <n-button>ithinkdt-ui</n-button>
 </template>
 ```
 
@@ -72,7 +72,7 @@ If you are using Volar, you can specify global component types by configuring `c
 {
   "compilerOptions": {
     // ...
-    "types": ["naive-ui/volar"]
+    "types": ["ithinkdt-ui/volar"]
   }
 }
 ```

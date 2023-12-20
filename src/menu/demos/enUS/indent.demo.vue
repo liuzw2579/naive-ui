@@ -15,8 +15,8 @@ You can specify `indent` & `root-indent` of the menu. `root-indent` only determi
 
 <script lang="ts">
 import { defineComponent, h, ref, Component } from 'vue'
-import { NIcon } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
+import type { MenuOption } from 'ithinkdt-ui'
 import {
   BookOutline as BookIcon,
   PersonOutline as PersonIcon,

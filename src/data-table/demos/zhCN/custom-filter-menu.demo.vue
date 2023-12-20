@@ -20,7 +20,7 @@ import {
   NIcon,
   DataTableColumns,
   DataTableBaseColumn
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 import { PawOutline, SearchOutline } from '@vicons/ionicons5'
 
 const data = [

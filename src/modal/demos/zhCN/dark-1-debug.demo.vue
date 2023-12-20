@@ -189,7 +189,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { FormRules } from 'naive-ui'
+import { FormRules } from 'ithinkdt-ui'
 
 export default defineComponent({
   data () {

@@ -20,7 +20,7 @@ In some cases, different roles will see different options. You can use the `show
 
 <script lang="ts">
 import { defineComponent, ref, Component, h, computed } from 'vue'
-import { NIcon } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
 import {
   BookOutline as BookIcon,
   PersonOutline as PersonIcon

@@ -2,7 +2,7 @@
   <img width="144px" src="https://naiveui.oss-cn-hongkong.aliyuncs.com/naivelogo.svg" />
 </p>
 
-<h1 align="center">Naive UI (forked)</h1>
+<h1 align="center">iThinkDT UI (forked Naive UI)</h1>
 <p align="center">一个 Vue 3 组件库</p>
 <p align="center"><b>比较完整，主题可调，使用 TypeScript，快</b></p>
 <p align="center">有点意思</p>
@@ -33,7 +33,7 @@
 
 ### 使用 TypeScript
 
-Naive UI 全量使用 TypeScript 编写，和你的 TypeScript 项目无缝衔接。
+iThinkDT UI 全量使用 TypeScript 编写，和你的 TypeScript 项目无缝衔接。
 
 顺便一提，你不需要导入任何 CSS 就能让组件正常工作。
 
@@ -50,7 +50,7 @@ Naive UI 全量使用 TypeScript 编写，和你的 TypeScript 项目无缝衔�
 使用 npm 安装。
 
 ```bash
-npm i -D naive-ui
+npm i -D ithinkdt-ui
 ```
 
 ### 字体
@@ -61,11 +61,11 @@ npm i -D vfonts
 
 ### 图标
 
-naive-ui 建议使用 [xicons](https://www.xicons.org) 作为图标库。
+ithinkdt-ui 建议使用 [xicons](https://www.xicons.org) 作为图标库。
 
 ### 设计资源
 
-[Naive UI (Sketch)](https://naive-ui.oss-accelerate.aliyuncs.com/NaiveUI-Design-Library-zh-CN.sketch)
+[iThinkDT UI (Sketch)](https://naive-ui.oss-accelerate.aliyuncs.com/NaiveUI-Design-Library-zh-CN.sketch)
 
 ## 许可
 

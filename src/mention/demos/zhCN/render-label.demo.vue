@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, h, VNodeChild } from 'vue'
-import { NAvatar, MentionOption } from 'naive-ui'
+import { NAvatar, MentionOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

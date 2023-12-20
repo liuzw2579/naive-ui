@@ -10,7 +10,7 @@ Use `prefix` to set the trigger character(s).
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { MentionOption } from 'naive-ui'
+import { MentionOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

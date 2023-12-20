@@ -12,7 +12,7 @@ Naive UI provides `useOsTheme` to get the current theme of your OS.
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
-import { useOsTheme, darkTheme } from 'naive-ui'
+import { useOsTheme, darkTheme } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

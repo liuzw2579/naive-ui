@@ -34,7 +34,7 @@ In some scenes, menu's value is passed from outside. The component is hard to un
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { MenuInst } from 'naive-ui'
+import { MenuInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

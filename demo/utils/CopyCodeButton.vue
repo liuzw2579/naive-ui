@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useMessage } from 'naive-ui'
+import { useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   name: 'CopyCodeButton',

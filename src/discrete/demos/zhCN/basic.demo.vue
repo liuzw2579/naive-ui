@@ -31,7 +31,7 @@ import {
   ConfigProviderProps,
   darkTheme,
   lightTheme
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 const themeRef = ref<'light' | 'dark'>('light')
 const configProviderPropsRef = computed<ConfigProviderProps>(() => ({

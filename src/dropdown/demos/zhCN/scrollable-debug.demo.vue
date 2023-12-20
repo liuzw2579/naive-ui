@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { DropdownMenuProps } from 'naive-ui'
+import { DropdownMenuProps } from 'ithinkdt-ui'
 
 const options = [
   {

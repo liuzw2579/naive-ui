@@ -33,7 +33,7 @@
   </div>
 </template>
 <script lang="ts">
-import { NTabs, NTabPane } from 'naive-ui'
+import { NTabs, NTabPane } from 'ithinkdt-ui'
 
 export default {
   name: 'App',

@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { InputInst } from 'naive-ui'
+import { InputInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

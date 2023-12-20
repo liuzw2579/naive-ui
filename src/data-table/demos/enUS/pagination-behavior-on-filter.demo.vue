@@ -17,7 +17,7 @@ If table stays on the current page and the total amount of filtered data cannot 
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { DataTableColumns } from 'naive-ui'
+import { DataTableColumns } from 'ithinkdt-ui'
 
 type RowData = {
   key: number

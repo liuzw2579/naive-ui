@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import type { ButtonProps } from 'naive-ui'
+import type { ButtonProps } from 'ithinkdt-ui'
 import EditIcon from '@vicons/fluent/Compose16Regular.js'
 import { blobUrl } from './github-url'
 

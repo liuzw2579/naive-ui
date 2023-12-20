@@ -25,7 +25,7 @@ import {
   TreeSelectRenderLabel,
   TreeSelectRenderTag,
   NTag
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

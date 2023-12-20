@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, h, VNodeChild } from 'vue'
-import { SelectOption, NTag } from 'naive-ui'
+import { SelectOption, NTag } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

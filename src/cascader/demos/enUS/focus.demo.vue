@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { CascaderInst } from 'naive-ui'
+import { CascaderInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

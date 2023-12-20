@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { FormInst, useMessage } from 'naive-ui'
+import { FormInst, useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

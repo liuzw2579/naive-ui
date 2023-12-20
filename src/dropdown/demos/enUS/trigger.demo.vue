@@ -22,7 +22,7 @@ Different ways to `trigger`/`show` a dropdown.
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useMessage } from 'naive-ui'
+import { useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

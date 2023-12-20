@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { onMounted, defineComponent } from 'vue'
-import { useLoadingBar } from 'naive-ui'
+import { useLoadingBar } from 'ithinkdt-ui'
 import SiteHeader from './SiteHeader.vue'
 import { loadingBarApiRef } from './routes/router'
 import { useIsMobile } from './utils/composables'

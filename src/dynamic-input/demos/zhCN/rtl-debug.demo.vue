@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { unstableDynamicInputRtl } from 'naive-ui'
+import { unstableDynamicInputRtl } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

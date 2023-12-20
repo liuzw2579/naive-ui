@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { FormRules } from 'naive-ui'
+import { FormRules } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

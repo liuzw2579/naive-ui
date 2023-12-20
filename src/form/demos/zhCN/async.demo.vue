@@ -38,7 +38,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { FormInst, FormItemRule, useMessage } from 'naive-ui'
+import { FormInst, FormItemRule, useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-import { GlobalThemeOverrides, useThemeVars } from 'naive-ui'
+import { GlobalThemeOverrides, useThemeVars } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

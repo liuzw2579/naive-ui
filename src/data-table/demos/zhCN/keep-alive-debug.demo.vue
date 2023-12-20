@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { h, defineComponent, ref } from 'vue'
-import type { DataTableColumns } from 'naive-ui'
-import { NDataTable } from 'naive-ui'
+import type { DataTableColumns } from 'ithinkdt-ui'
+import { NDataTable } from 'ithinkdt-ui'
 
 type RowData = {
   key: number

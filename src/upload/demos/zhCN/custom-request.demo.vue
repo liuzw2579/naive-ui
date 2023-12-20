@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useMessage, UploadCustomRequestOptions } from 'naive-ui'
+import { useMessage, UploadCustomRequestOptions } from 'ithinkdt-ui'
 import { lyla } from '@lylajs/web'
 
 export default defineComponent({

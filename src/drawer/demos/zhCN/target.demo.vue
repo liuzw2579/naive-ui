@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { DrawerPlacement } from 'naive-ui'
+import { DrawerPlacement } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

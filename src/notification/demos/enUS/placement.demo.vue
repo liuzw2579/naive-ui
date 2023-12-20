@@ -15,7 +15,7 @@ import {
   NButton,
   NSpace,
   NotificationPlacement
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 const PlacementButtons = defineComponent({
   props: {

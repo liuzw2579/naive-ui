@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import { defineComponent, h, Component } from 'vue'
-import { NIcon } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
+import type { MenuOption } from 'ithinkdt-ui'
 import { RouterLink } from 'vue-router'
 import {
   LaptopOutline as WorkIcon,

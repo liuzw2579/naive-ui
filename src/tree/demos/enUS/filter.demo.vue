@@ -26,7 +26,7 @@ Tree accept `pattern` and `filter` to do searching.
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { TreeOption } from 'naive-ui'
+import { TreeOption } from 'ithinkdt-ui'
 
 const data: TreeOption[] = [
   {

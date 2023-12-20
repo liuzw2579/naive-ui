@@ -10,7 +10,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 ## 使用暗色主题
 
-将 `n-config-provider` 的 `theme` 设为从 naive-ui 导入的 `darkTheme` 来设定暗色主题。
+将 `n-config-provider` 的 `theme` 设为从 ithinkdt-ui 导入的 `darkTheme` 来设定暗色主题。
 
 若 `theme` 为 `undefined` 则不会影响内部组件的主题。
 
@@ -23,7 +23,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 <script>
   import { defineComponent } from 'vue'
-  import { darkTheme } from 'naive-ui'
+  import { darkTheme } from 'ithinkdt-ui'
 
   export default defineComponent({
     setup() {
@@ -41,7 +41,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 配置的全局主题变量会对后代组件生效的主题变量覆盖。
 
-通过设定 `n-config-provider` 的 `theme-overrides` 来调整主题变量。naive-ui 导出了 `GlobalThemeOverrides` 类型帮助你定义主题。
+通过设定 `n-config-provider` 的 `theme-overrides` 来调整主题变量。ithinkdt-ui 导出了 `GlobalThemeOverrides` 类型帮助你定义主题。
 
 具体可使用变量请参考 `GlobalThemeOverrides` 类型提示。
 
@@ -51,11 +51,11 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 ```html
 <script>
-  import { NConfigProvider } from 'naive-ui'
+  import { NConfigProvider } from 'ithinkdt-ui'
 
   /**
    * js 文件下使用这个做类型提示
-   * @type import('naive-ui').GlobalThemeOverrides
+   * @type import('ithinkdt-ui').GlobalThemeOverrides
    */
   const themeOverrides = {
     common: {
@@ -90,7 +90,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 ```html
 <script lang="ts">
-  import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
+  import { NConfigProvider, GlobalThemeOverrides } from 'ithinkdt-ui'
 
   const themeOverrides: GlobalThemeOverrides = {
     common: {
@@ -117,7 +117,7 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 ```html
 <script lang="ts">
-  import { SelectProps, ButtonProps } from 'naive-ui'
+  import { SelectProps, ButtonProps } from 'ithinkdt-ui'
 
   type SelectThemeOverrides = NonNullable<SelectProps['themeOverrides']>
   type ButtonThemeOverrides = NonNullable<ButtonProps['themeOverrides']>
@@ -156,10 +156,10 @@ Naive UI 通过使用 `n-config-provider` 调整主题。
 
 ```html
 <script>
-  import { NConfigProvider, darkTheme } from 'naive-ui'
+  import { NConfigProvider, darkTheme } from 'ithinkdt-ui'
 
   /**
-   * @type import('naive-ui').GlobalThemeOverrides
+   * @type import('ithinkdt-ui').GlobalThemeOverrides
    */
   const lightThemeOverrides = {
     common: {
@@ -199,7 +199,7 @@ peers 相关的主题变量还没有暴露，使用 `GlobalThemeOverrides` 可�
 
 ```html
 <script lang="ts">
-  import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
+  import { NConfigProvider, GlobalThemeOverrides } from 'ithinkdt-ui'
 
   const themeOverrides: GlobalThemeOverrides = {
     Select: {
@@ -239,7 +239,7 @@ peers 相关的主题变量还没有暴露，使用 `GlobalThemeOverrides` 可�
 
 出于以下原因，你可能需要将某些样式设定在 `document.body` 上。
 
-1. naive-ui 会设定一些非响应式的全局样式（例如字体），它们在默认状况下工作良好，但是不能响应主题的变化。
+1. ithinkdt-ui 会设定一些非响应式的全局样式（例如字体），它们在默认状况下工作良好，但是不能响应主题的变化。
 2. `n-config-provider` 无法将全局样式同步到它以外的地方（例如 body 背景色）。
 
 通过使用 `n-global-style` 可以将常见的全局样式同步到 body 上。在下面的例子中，`n-global-style` 会将 `n-config-provider` 提供的主题同步到 `document.body` 上。
@@ -255,7 +255,7 @@ peers 相关的主题变量还没有暴露，使用 `GlobalThemeOverrides` 可�
 
 ## 主题编辑器
 
-naive-ui 提供主题编辑器帮助你方便的编辑主题并导出对应配置。它可以被嵌套于 `n-config-provider` 中。
+ithinkdt-ui 提供主题编辑器帮助你方便的编辑主题并导出对应配置。它可以被嵌套于 `n-config-provider` 中。
 
 主题编辑器不包含在全局安装中（`app.use(naive)`）。你需要显式引入来使用它。
 
@@ -268,7 +268,7 @@ naive-ui 提供主题编辑器帮助你方便的编辑主题并导出对应配�
 
 <script>
   import { defineComponent } from 'vue'
-  import { NThemeEditor } from 'naive-ui'
+  import { NThemeEditor } from 'ithinkdt-ui'
 
   export default defineComponent({
     components: {

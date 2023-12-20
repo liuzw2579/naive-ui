@@ -13,7 +13,7 @@
 
 ```js
 import { h, defineComponent } from 'vue'
-import { NTag, NButton, useMessage } from 'naive-ui'
+import { NTag, NButton, useMessage } from 'ithinkdt-ui'
 
 const createColumns = ({ sendMail }) => {
   return [

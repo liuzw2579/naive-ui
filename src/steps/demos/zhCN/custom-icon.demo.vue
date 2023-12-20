@@ -6,7 +6,7 @@
 
 <template>
   <n-space vertical>
-    <n-steps :current="(current as number)" :status="currentStatus">
+    <n-steps :current="current as number" :status="currentStatus">
       <template #finish-icon>
         <n-icon>
           <md-happy />
@@ -84,7 +84,7 @@ import {
   MdHappy,
   MdSad
 } from '@vicons/ionicons4'
-import { StepsProps } from 'naive-ui'
+import { StepsProps } from 'ithinkdt-ui'
 
 export default defineComponent({
   components: {

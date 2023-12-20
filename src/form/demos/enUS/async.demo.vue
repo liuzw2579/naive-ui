@@ -45,7 +45,7 @@ import {
   FormItemRule,
   FormValidationError,
   useMessage
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

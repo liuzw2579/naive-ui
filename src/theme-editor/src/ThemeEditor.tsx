@@ -105,10 +105,14 @@ export default defineComponent({
     })
     const showPanelRef = ref(false)
     const overridesRef = ref<any>(
-      JSON.parse((localStorage['naive-ui-theme-overrides'] as string) || '{}')
+      JSON.parse(
+        (localStorage['ithinkdt-ui-theme-overrides'] as string) || '{}'
+      )
     )
     const tempOverridesRef = ref<any>(
-      JSON.parse((localStorage['naive-ui-theme-overrides'] as string) || '{}')
+      JSON.parse(
+        (localStorage['ithinkdt-ui-theme-overrides'] as string) || '{}'
+      )
     )
     const varNamePatternRef = ref('')
     const compNamePatternRef = ref('')
@@ -170,14 +174,14 @@ export default defineComponent({
       )
       const a = document.createElement('a')
       a.href = url
-      a.download = 'naive-ui-theme-overrides.json'
+      a.download = 'ithinkdt-ui-theme-overrides.json'
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
       URL.revokeObjectURL(url)
     }
     watch(overridesRef, (value) => {
-      localStorage['naive-ui-theme-overrides'] = JSON.stringify(value)
+      localStorage['ithinkdt-ui-theme-overrides'] = JSON.stringify(value)
     })
     return {
       locale: useLocale('ThemeEditor').localeRef,

@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { SelectOption, SelectGroupOption } from 'naive-ui'
+import { SelectOption, SelectGroupOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

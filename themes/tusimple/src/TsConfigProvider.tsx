@@ -6,7 +6,7 @@ import {
   toRef,
   watch
 } from 'vue'
-import { NConfigProvider, configProviderProps } from 'naive-ui'
+import { NConfigProvider, configProviderProps } from 'ithinkdt-ui'
 import { merge } from 'lodash-es'
 import { renderFilter, renderSorter } from './data-table'
 import { unconfigurableStyle, mountSvgDefs } from './unconfigurable-style-light'
@@ -54,14 +54,14 @@ export default defineComponent({
       mountSvgDefs()
       currentUnconfigurableStyle = unconfigurableStyle
       unconfigurableStyle.mount({
-        id: 'naive-ui/tusimple-theme'
+        id: 'ithinkdt-ui/tusimple-theme'
       })
     }
     function mountDarkTheme (): void {
       mountSvgDarkDefs()
       currentUnconfigurableStyle = unconfigurableDarkStyle
       unconfigurableDarkStyle.mount({
-        id: 'naive-ui/tusimple-theme'
+        id: 'ithinkdt-ui/tusimple-theme'
       })
     }
     function unmountTheme (): void {

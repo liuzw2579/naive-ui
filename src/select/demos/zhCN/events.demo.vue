@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useMessage, SelectOption } from 'naive-ui'
+import { useMessage, SelectOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

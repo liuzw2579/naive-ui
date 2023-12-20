@@ -21,7 +21,7 @@ import {
   NButton,
   NAvatar,
   unstableNotificationRtl
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 const NotificationButton = defineComponent({
   setup () {

@@ -7,7 +7,7 @@
     <n-space><n-switch v-model:value="rtlEnabled" />Rtl</n-space>
     <n-config-provider :rtl="rtlEnabled ? rtlStyles : undefined">
       <n-space vertical>
-        <n-steps :current="(current as number)" :status="currentStatus">
+        <n-steps :current="current as number" :status="currentStatus">
           <n-step
             title="I Me Mine"
             description="All through the day, I me mine I me mine, I me mine"
@@ -68,7 +68,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { unstableStepsRtl, StepsProps } from 'naive-ui'
+import { unstableStepsRtl, StepsProps } from 'ithinkdt-ui'
 import { MdArrowRoundBack, MdArrowRoundForward } from '@vicons/ionicons4'
 
 export default defineComponent({

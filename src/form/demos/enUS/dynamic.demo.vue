@@ -49,7 +49,7 @@ Delete or add form items dynamically.
 </template>
 
 <script lang="ts">
-import { FormInst } from 'naive-ui'
+import { FormInst } from 'ithinkdt-ui'
 import { defineComponent, reactive, ref } from 'vue'
 
 export default defineComponent({

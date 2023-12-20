@@ -12,7 +12,7 @@ You can just render something which is not related to options data by setting `t
 
 <script lang="ts">
 import { defineComponent, h } from 'vue'
-import { useMessage, NAvatar, NText } from 'naive-ui'
+import { useMessage, NAvatar, NText } from 'ithinkdt-ui'
 
 function renderCustomHeader () {
   return h(

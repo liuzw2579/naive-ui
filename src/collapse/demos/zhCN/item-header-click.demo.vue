@@ -27,8 +27,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useMessage } from 'naive-ui'
-import type { CollapseProps } from 'naive-ui'
+import { useMessage } from 'ithinkdt-ui'
+import type { CollapseProps } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

@@ -13,7 +13,7 @@ Dropdown options can also have icons!
 <script lang="ts">
 import { h, defineComponent } from 'vue'
 import type { Component } from 'vue'
-import { NIcon } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
 import {
   PersonCircleOutline as UserIcon,
   Pencil as EditIcon,

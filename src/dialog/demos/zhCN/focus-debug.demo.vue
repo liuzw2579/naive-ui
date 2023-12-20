@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, h } from 'vue'
-import { useDialog, NTimePicker } from 'naive-ui'
+import { useDialog, NTimePicker } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import { h, defineComponent } from 'vue'
-import { NButton, useMessage } from 'naive-ui'
-import type { DataTableColumns } from 'naive-ui'
+import { NButton, useMessage } from 'ithinkdt-ui'
+import type { DataTableColumns } from 'ithinkdt-ui'
 
 type Song = {
   no: number

@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, h, ref } from 'vue'
-import { DataTableColumn, NButton, NDataTable } from 'naive-ui'
+import { DataTableColumn, NButton, NDataTable } from 'ithinkdt-ui'
 
 export type RowData = {
   key: number

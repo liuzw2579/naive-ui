@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { AnchorInst } from 'naive-ui'
+import { AnchorInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

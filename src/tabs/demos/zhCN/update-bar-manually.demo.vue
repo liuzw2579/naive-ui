@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent, nextTick, ref } from 'vue'
-import { TabsInst } from 'naive-ui'
+import { TabsInst } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

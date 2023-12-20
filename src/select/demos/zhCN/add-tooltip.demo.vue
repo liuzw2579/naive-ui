@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, h, ref, VNode } from 'vue'
-import { NTooltip, SelectOption } from 'naive-ui'
+import { NTooltip, SelectOption } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

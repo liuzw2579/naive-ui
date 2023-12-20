@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { unstableTagRtl, useMessage } from 'naive-ui'
+import { unstableTagRtl, useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

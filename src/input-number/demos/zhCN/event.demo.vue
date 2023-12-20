@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useMessage } from 'naive-ui'
+import { useMessage } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

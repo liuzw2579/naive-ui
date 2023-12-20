@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { DataTableColumns } from 'naive-ui'
+import { DataTableColumns } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

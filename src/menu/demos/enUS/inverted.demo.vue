@@ -32,8 +32,8 @@ Set `inverted` to add contrast. Usually used with `n-layout`.
 
 <script lang="ts">
 import { h, defineComponent, ref, Component } from 'vue'
-import { NIcon } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
+import { NIcon } from 'ithinkdt-ui'
+import type { MenuOption } from 'ithinkdt-ui'
 import {
   BookOutline as BookIcon,
   PersonOutline as PersonIcon,

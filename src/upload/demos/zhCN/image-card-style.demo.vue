@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { UploadFileInfo } from 'naive-ui'
+import { UploadFileInfo } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

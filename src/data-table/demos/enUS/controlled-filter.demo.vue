@@ -27,7 +27,7 @@ import {
   DataTableColumns,
   DataTableBaseColumn,
   DataTableFilterState
-} from 'naive-ui'
+} from 'ithinkdt-ui'
 
 type Row = {
   key: number
