@@ -729,19 +729,24 @@ const Scrollbar = defineComponent({
     } = this
     if (!this.scrollable) return $slots.default?.()
     const triggerIsNone = this.trigger === 'none'
-    const createYRail = (style: CSSProperties | undefined): VNode => {
+    const createYRail = (
+      className: string | undefined,
+      style: CSSProperties | undefined
+    ): VNode => {
       return (
         <div
           ref="yRailRef"
           class={[
             `${mergedClsPrefix}-scrollbar-rail`,
-            `${mergedClsPrefix}-scrollbar-rail--vertical`
+            `${mergedClsPrefix}-scrollbar-rail--vertical`,
+            className
           ]}
           data-scrollbar-rail
           style={[style || '', this.verticalRailStyle as CSSProperties]}
           aria-hiddens
         >
           {h(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             (triggerIsNone ? Wrapper : Transition) as any,
             triggerIsNone ? null : { name: 'fade-in-transition' },
             {
@@ -816,7 +821,7 @@ const Scrollbar = defineComponent({
               </div>
             </div>
           ),
-          internalHoistYRail ? null : createYRail(undefined),
+          internalHoistYRail ? null : createYRail(undefined, undefined),
           this.xScrollable && (
             <div
               ref="xRailRef"
@@ -829,6 +834,7 @@ const Scrollbar = defineComponent({
               aria-hidden
             >
               {h(
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 (triggerIsNone ? Wrapper : Transition) as any,
                 triggerIsNone ? null : { name: 'fade-in-transition' },
                 {
@@ -856,7 +862,7 @@ const Scrollbar = defineComponent({
       return (
         <Fragment>
           {scrollbarNode}
-          {createYRail(this.cssVars)}
+          {createYRail(this.themeClass, this.cssVars)}
         </Fragment>
       )
     } else {
