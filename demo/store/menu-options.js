@@ -164,6 +164,11 @@ export function createDocumentationMenuOptions ({ lang, theme, mode }) {
           en: 'Change Log',
           zh: '变更日志',
           path: '/changelog'
+        },
+        {
+          en: 'Change Log (iThinkDT)',
+          zh: '变更日志（iThinkDT）',
+          path: '/changelog-ithinkdt'
         }
       ]
     }

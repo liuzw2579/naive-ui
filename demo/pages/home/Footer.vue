@@ -31,6 +31,9 @@
         <n-button text @click="push('/docs/changelog')">
           {{ t('changelog') }}
         </n-button>
+        <n-button text @click="push('/docs/changelog-ithinkdt')">
+          {{ t('changelog') }} iThinkDT
+        </n-button>
         <n-button
           text
           tag="a"
