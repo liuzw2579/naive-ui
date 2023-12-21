@@ -88,7 +88,7 @@
         GitHub
       </n-button>
       <n-text class="nav-picker padded">
-        {{ version }}
+        {{ version }} [ Naive {{ NAIVE_VERSION }} ]
       </n-text>
       <n-button
         v-if="dev"
@@ -115,7 +115,7 @@
 <script lang="ts">
 import { defineComponent, computed, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useMessage, version } from 'ithinkdt-ui'
+import { useMessage, version, NAIVE_VERSION } from 'ithinkdt-ui'
 import { MenuOutline } from '@vicons/ionicons5'
 import { repoUrl } from './utils/github-url'
 import { i18n, useIsMobile, useIsTablet } from './utils/composables'
@@ -384,6 +384,7 @@ export default defineComponent({
       message,
       t,
       version,
+      NAIVE_VERSION,
       isMobile: isMobileRef,
       isTablet: isTabletRef,
       repoUrl,
