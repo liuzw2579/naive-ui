@@ -2,6 +2,10 @@
 
 ## Next Version
 
+## 1.1.2 [naive: 2.36.0] (2023-12-21)
+
+- 同步 naive-ui github
+
 ## 1.1.1 [naive: 2.36.0] (2023-12-20)
 
 - 同步 naive-ui `2.36.0`
