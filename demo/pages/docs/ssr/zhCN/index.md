@@ -50,7 +50,7 @@ export default defineNuxtConfig({
 
 ## Webpack 示例
 
-如果你使用的是 Webpack，请参考[例子](https://github.com/liuzw2579/ithinkdt-ui/tree/main/playground/ssr)。
+如果你使用的是 Webpack，请参考[例子](https://github.com/liuzw2579/ithinkdt-ui/tree/ithinkdt/playground/ssr)。
 
 ## 内联样式优化
 

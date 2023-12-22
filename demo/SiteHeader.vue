@@ -82,7 +82,7 @@
         tag="a"
         quaternary
         class="nav-picker"
-        :href="repoUrl"
+        :href="branchUrl"
         target="_blank"
       >
         GitHub
@@ -117,7 +117,7 @@ import { defineComponent, computed, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useMessage, version, NAIVE_VERSION } from 'ithinkdt-ui'
 import { MenuOutline } from '@vicons/ionicons5'
-import { repoUrl } from './utils/github-url'
+import { branchUrl } from './utils/github-url'
 import { i18n, useIsMobile, useIsTablet } from './utils/composables'
 import { findMenuValue } from './utils/route'
 import {
@@ -263,7 +263,7 @@ export default defineComponent({
       } else if (path) {
         router.push(path)
       } else {
-        window.open(repoUrl, '_blank')
+        window.open(branchUrl, '_blank')
       }
       mobilePopoverRef.value.setShow(false)
     }
@@ -387,7 +387,7 @@ export default defineComponent({
       NAIVE_VERSION,
       isMobile: isMobileRef,
       isTablet: isTabletRef,
-      repoUrl,
+      branchUrl,
       // theme
       theme: themeNameRef,
       handleThemeUpdate,

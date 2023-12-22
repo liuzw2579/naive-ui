@@ -47,7 +47,7 @@
         <n-text depth="1" class="col-header">
           {{ t('community') }}
         </n-text>
-        <n-button text tag="a" target="_blank" :href="repoUrl">
+        <n-button text tag="a" target="_blank" :href="branchUrl">
           GitHub
         </n-button>
         <n-button
@@ -101,7 +101,7 @@ import { defineComponent } from 'vue'
 import { version } from 'ithinkdt-ui'
 import { i18n } from '../../utils/composables'
 import { push } from '../../store'
-import { repoUrl } from '../../utils/github-url'
+import { branchUrl } from '../../utils/github-url'
 
 export default defineComponent({
   props: {
@@ -110,7 +110,7 @@ export default defineComponent({
   setup () {
     return {
       version,
-      repoUrl,
+      branchUrl,
       push,
       ...i18n({
         'zh-CN': {

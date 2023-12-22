@@ -45,7 +45,7 @@
   "--homepage": "https://www.naiveui.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/liuzw2579/ithinkdt-ui"
+    "url": "https://github.com/liuzw2579/ithinkdt-ui/tree/ithinkdt"
   },
   "license": "MIT",
   "files": [

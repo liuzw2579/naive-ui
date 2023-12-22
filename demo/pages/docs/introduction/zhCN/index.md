@@ -42,7 +42,7 @@ iThinkDT UI 全量使用 TypeScript 编写，和你的 TypeScript 项目无缝�
 
 ## 贡献
 
-请参考 [CONTRIBUTING.md](https://github.com/liuzw2579/ithinkdt-ui/blob/main/CONTRIBUTING.md)。
+请参考 [CONTRIBUTING.md](https://github.com/liuzw2579/ithinkdt-ui/blob/ithinkdt/CONTRIBUTING.md)。
 
 ## 许可
 
