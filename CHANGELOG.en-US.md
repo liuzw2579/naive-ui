@@ -22,6 +22,8 @@
 - Fix `n-data-table` height incorrect when set `min-height` in empty state，closes [#5108](https://github.com/tusen-ai/naive-ui/issues/5108).
 - Fix `n-tabs`'s bar not hidden when `value` is set manually to the value other than the children `n-tab`s, closes [#5100](https://github.com/tusen-ai/naive-ui/issues/5100).
 - Fix `n-spin` abnormal animation, closes [#3556](https://github.com/tusen-ai/naive-ui/issues/3556).
+- Fix `n-avatar`'s lazy loading and `fallback-src` prop not working when load error in lazy, closes [#5007](https://github.com/tusen-ai/naive-ui/issues/5007).
+- Fix `n-split` has no color if it's not used in a card.
 
 ### Features
 
@@ -37,6 +39,13 @@
 - Update `ruRU` locale.
 - `n-drawer` adds `content-class` `body-class` `body-content-class` `footer-class` `header-class` prop.
 - `n-tree` adds multiple `scrollTo` configurations.
+- `n-form` adds `warningOnly` property from `FormItemRule` to show abnormal values but not block submit
+- `n-cascader` adds `ellipsis-tag-popover-props` prop.
+- `n-select` adds `ellipsis-tag-popover-props` prop.
+- `n-tree-select` adds `ellipsis-tag-popover-props` prop.
+- `n-date-picker` adds `month-string-type` prop, closes [#4891](https://github.com/tusen-ai/naive-ui/issues/4891)
+- `n-avatar-group` adds `expand-on-hover` prop.
+- `n-data-table` adds `exportCsv` method, closes [#4260](https://github.com/tusen-ai/naive-ui/issues/4260)
 
 ## 2.36.0
 
@@ -141,6 +150,7 @@
 
 - Update `zhTW` locale.
 - Add `svSE` locale.
+- Update `jaJP` locale.
 
 ## 2.34.4
 
