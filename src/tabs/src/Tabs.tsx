@@ -85,6 +85,9 @@ export const tabsProps = {
     default: 'top'
   },
   tabStyle: [String, Object] as PropType<string | CSSProperties>,
+  tabClass: String,
+  addTabStyle: [String, Object] as PropType<string | CSSProperties>,
+  addTabClass: String,
   barWidth: Number,
   paneClass: String,
   paneStyle: [String, Object] as PropType<string | CSSProperties>,
@@ -155,6 +158,7 @@ export default defineComponent({
     const xScrollInstRef = ref<(VXScrollInst & ComponentPublicInstance) | null>(
       null
     )
+    const yScrollElRef = ref<HTMLElement | null>(null)
 
     const startReachedRef = ref(true)
     const endReachedRef = ref(true)
@@ -475,8 +479,11 @@ export default defineComponent({
         }
       }
       if (type !== 'segment') {
+        const { placement } = props
         deriveScrollShadow(
-          (xScrollInstRef.value?.$el as undefined | HTMLElement) || null
+          (placement === 'top' || placement === 'bottom'
+            ? (xScrollInstRef.value?.$el as undefined | HTMLElement)
+            : yScrollElRef.value) || null
         )
       }
     }
@@ -550,6 +557,9 @@ export default defineComponent({
     provide(tabsInjectionKey, {
       triggerRef: toRef(props, 'trigger'),
       tabStyleRef: toRef(props, 'tabStyle'),
+      tabClassRef: toRef(props, 'tabClass'),
+      addTabStyleRef: toRef(props, 'addTabStyle'),
+      addTabClassRef: toRef(props, 'addTabClass'),
       paneClassRef: toRef(props, 'paneClass'),
       paneStyleRef: toRef(props, 'paneStyle'),
       mergedClsPrefixRef,
@@ -705,6 +715,7 @@ export default defineComponent({
       themeClass: themeClassHandle?.themeClass,
       animationDirection: animationDirectionRef,
       renderNameListRef,
+      yScrollElRef,
       onAnimationBeforeLeave,
       onAnimationEnter,
       onAnimationAfterEnter,
@@ -922,6 +933,7 @@ export default defineComponent({
                       <div
                         class={`${mergedClsPrefix}-tabs-nav-y-scroll`}
                         onScroll={this.handleScroll}
+                        ref="yScrollElRef"
                       >
                         {scrollContent()}
                       </div>

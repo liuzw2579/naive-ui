@@ -26,7 +26,7 @@ import { useMergedState } from 'vooks'
 import {
   type VirtualListInst,
   VVirtualList,
-  type VirtualListScrollOptions
+  type VirtualListScrollToOptions
 } from 'vueuc'
 import { depx, getPadding, pxfy } from 'seemly'
 import { treeSelectInjectionKey } from '../../tree-select/src/interface'
@@ -69,7 +69,8 @@ import type {
   CheckOnClick,
   TreeInst,
   GetChildren,
-  OnLoad
+  OnLoad,
+  TreeOverrideNodeClickBehavior
 } from './interface'
 import { treeInjectionKey } from './interface'
 import MotionWrapper from './MotionWrapper'
@@ -207,7 +208,9 @@ export const treeSharedProps = {
   >,
   'onUpdate:expandedKeys': [Function, Array] as PropType<
   MaybeArray<onUpdateExpandedKeys>
-  >
+  >,
+  overrideDefaultNodeClickBehavior:
+    Function as PropType<TreeOverrideNodeClickBehavior>
 } as const
 
 export const treeProps = {
@@ -521,9 +524,11 @@ export default defineComponent({
 
     const { pendingNodeKeyRef, handleKeydown } = useKeyboard({
       props,
+      mergedCheckedKeysRef,
       mergedSelectedKeysRef,
       fNodesRef,
       mergedExpandedKeysRef,
+      handleCheck,
       handleSelect,
       handleSwitcherClick
     })
@@ -1537,6 +1542,10 @@ export default defineComponent({
       renderSwitcherIconRef: toRef(props, 'renderSwitcherIcon'),
       labelFieldRef: toRef(props, 'labelField'),
       multipleRef: toRef(props, 'multiple'),
+      overrideDefaultNodeClickBehaviorRef: toRef(
+        props,
+        'overrideDefaultNodeClickBehavior'
+      ),
       handleSwitcherClick,
       handleDragEnd,
       handleDragEnter,
@@ -1548,12 +1557,13 @@ export default defineComponent({
       handleCheck
     })
     function scrollTo (
-      options: VirtualListScrollOptions | number,
+      options: VirtualListScrollToOptions | number,
       y?: number
     ): void {
       if (typeof options === 'number') {
         virtualListInstRef.value?.scrollTo(options, y || 0)
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         virtualListInstRef.value?.scrollTo(options)
       }
     }

@@ -43,13 +43,13 @@ rtl-debug.vue
 
 | 名称 | 类型 | 默认值 | 说明 | 版本 |
 | --- | --- | --- | --- | --- |
-| expand-on-hover | `boolean` | `false` | 悬停时展开 | NEXT_VERSION |
+| expand-on-hover | `boolean` | `false` | 悬停时展开 | 2.37.0 |
 | max | `number` | `undefined` | 组内头像显示的最大个数 |  |
 | max-style | `Object \| string` | `undefined` | 溢出标识的样式 |  |
 | options | `Array<AvatarOption>` | `[]` | 头像组的选项 |  |
 | vertical | `boolean` | `false` | 组内头像是否垂直排列 |  |
 
-参考 [Avatar Props](avatar#Props)
+参考 [Avatar Props](#Avatar-Props)
 
 ### Avatar Slots
 

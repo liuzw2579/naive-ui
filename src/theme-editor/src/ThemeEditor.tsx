@@ -27,7 +27,7 @@ import { NDivider } from '../../divider'
 import { NButton } from '../../button'
 import { NColorPicker } from '../../color-picker'
 import { NEmpty } from '../../empty'
-import { lockHtmlScrollRightCompensationRef } from '../../_utils'
+import { download, lockHtmlScrollRightCompensationRef } from '../../_utils'
 import { NIcon } from '../../icon'
 import { MaximizeIcon } from './MaximizeIcon'
 import { MinimizeIcon } from './MinimizeIcon'
@@ -172,12 +172,7 @@ export default defineComponent({
       const url = URL.createObjectURL(
         new Blob([JSON.stringify(overridesRef.value, undefined, 2)])
       )
-      const a = document.createElement('a')
-      a.href = url
-      a.download = 'ithinkdt-ui-theme-overrides.json'
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
+      download(url, 'ithinkdt-ui-theme-overrides.json')
       URL.revokeObjectURL(url)
     }
     watch(overridesRef, (value) => {

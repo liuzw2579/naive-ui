@@ -1,15 +1,15 @@
 <markdown>
-# Export Csv
+# Export CSV
 </markdown>
 
 <template>
   <n-space vertical :size="12">
     <n-space>
-      <n-button @click="exportCsv">
-        Export Csv
+      <n-button @click="downloadCsv">
+        Export CSV (original data)
       </n-button>
       <n-button @click="exportSorterAndFilterCsv">
-        Export Sorter & Filter Csv
+        Export CSV (displayed data)
       </n-button>
     </n-space>
     <n-data-table
@@ -96,11 +96,11 @@ export default defineComponent({
   setup () {
     const tableRef = ref<DataTableInst>()
 
-    const exportCsv = () =>
-      tableRef.value?.exportCsv({ fileName: 'data-table' })
+    const downloadCsv = () =>
+      tableRef.value?.downloadCsv({ fileName: 'data-table' })
 
     const exportSorterAndFilterCsv = () =>
-      tableRef.value?.exportCsv({
+      tableRef.value?.downloadCsv({
         fileName: 'sorter-filter',
         keepOriginalData: false
       })
@@ -108,7 +108,7 @@ export default defineComponent({
     return {
       data,
       tableRef,
-      exportCsv,
+      downloadCsv,
       exportSorterAndFilterCsv,
       columns,
       pagination: false as const

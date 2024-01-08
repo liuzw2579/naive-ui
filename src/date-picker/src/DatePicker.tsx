@@ -68,8 +68,7 @@ import type {
   OnUpdateFormattedValueImpl,
   DatePickerInst,
   OnConfirmImpl,
-  OnConfirm,
-  MonthStringType
+  OnConfirm
 } from './interface'
 import { datePickerInjectionKey } from './interface'
 import DatetimePanel from './panel/datetime'
@@ -137,6 +136,9 @@ export const datePickerProps = {
   defaultCalendarStartTime: Number,
   defaultCalendarEndTime: Number,
   bindCalendarMonths: Boolean,
+  monthFormat: { type: String, default: 'M' },
+  yearFormat: { type: String, default: 'y' },
+  quarterFormat: { type: String, default: "'Q'Q" },
   'onUpdate:show': [Function, Array] as PropType<
   MaybeArray<(show: boolean) => void>
   >,
@@ -158,11 +160,7 @@ export const datePickerProps = {
   onNextYear: Function as PropType<() => void>,
   onPrevYear: Function as PropType<() => void>,
   // deprecated
-  onChange: [Function, Array] as PropType<MaybeArray<OnUpdateValue>>,
-  monthStringType: {
-    type: String as PropType<MonthStringType>,
-    default: 'numeric'
-  }
+  onChange: [Function, Array] as PropType<MaybeArray<OnUpdateValue>>
 } as const
 
 export type DatePickerSetupProps = ExtractPropTypes<typeof datePickerProps>
@@ -672,7 +670,10 @@ export default defineComponent({
         singleInputValueRef.value = v
       }
     }
-    function handleRangeUpdateValue (v: [string, string]): void {
+    function handleRangeUpdateValue (
+      v: [string, string],
+      { source }: { source: 0 | 1 | 'clear' }
+    ): void {
       if (v[0] === '' && v[1] === '') {
         // clear or just delete all the inputs
         doUpdateValue(null, { doConfirm: false })
@@ -695,7 +696,16 @@ export default defineComponent({
         dateFnsOptionsRef.value
       )
       if (isValid(newStartTime) && isValid(newEndTime)) {
-        doUpdateValue([getTime(newStartTime), getTime(newEndTime)], {
+        let newStartTs = getTime(newStartTime)
+        let newEndTs = getTime(newEndTime)
+        if (newEndTime < newStartTime) {
+          if (source === 0) {
+            newEndTs = newStartTs
+          } else {
+            newStartTs = newEndTs
+          }
+        }
+        doUpdateValue([newStartTs, newEndTs], {
           doConfirm: false
         })
         deriveInputState()
@@ -775,7 +785,9 @@ export default defineComponent({
       timePickerPropsRef: toRef(props, 'timePickerProps'),
       closeOnSelectRef: toRef(props, 'closeOnSelect'),
       updateValueOnCloseRef: toRef(props, 'updateValueOnClose'),
-      monthStringTypeRef: toRef(props, 'monthStringType'),
+      monthFormatRef: toRef(props, 'monthFormat'),
+      yearFormatRef: toRef(props, 'yearFormat'),
+      quarterFormatRef: toRef(props, 'quarterFormat'),
       ...uniVaidation,
       ...dualValidation,
       datePickerSlots: slots
