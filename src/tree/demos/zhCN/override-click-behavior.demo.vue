@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { TreeOverrideNodeClickBehavior } from 'naive-ui'
+import { TreeOverrideNodeClickBehavior } from 'ithinkdt-ui'
 
 export default defineComponent({
   setup () {

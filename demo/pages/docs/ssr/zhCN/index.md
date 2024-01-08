@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     transpile:
       process.env.NODE_ENV === 'production'
         ? [
-            'naive-ui',
+            'ithinkdt-ui',
             'vueuc',
             '@css-render/vue3-ssr',
             'juggle/resize-observer'
@@ -70,14 +70,14 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include:
         process.env.NODE_ENV === 'development'
-          ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
+          ? ['ithinkdt-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
           : []
     },
     plugins: [
       AutoImport({
         imports: [
           {
-            'naive-ui': [
+            'ithinkdt-ui': [
               'useDialog',
               'useMessage',
               'useNotification',
