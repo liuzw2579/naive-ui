@@ -2,6 +2,10 @@
 
 ## Next Version
 
+## 1.2.4 [naive: 2.37.3] (2024-01-11)
+
+- `n-dynamic-input` 修复创建按钮多一个
+
 ## 1.2.3 [naive: 2.37.3] (2024-01-11)
 
 - `n-dynamic-input` 创建按钮传递正确的 `index`

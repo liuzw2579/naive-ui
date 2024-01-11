@@ -356,6 +356,7 @@ export default defineComponent({
       </NButton>
     )
 
+    const hasValue = Array.isArray(mergedValue) && mergedValue.length > 0
     return (
       <div
         class={[
@@ -365,9 +366,8 @@ export default defineComponent({
         ]}
         style={this.cssVars as CSSProperties}
       >
-        {!Array.isArray(mergedValue) || mergedValue.length === 0
-          ? create
-          : mergedValue.map((_, index) => (
+        {hasValue
+          ? mergedValue.map((_, index) => (
               <div
                 key={keyField ? _[keyField] : ensureKey(_, index)}
                 data-key={keyField ? _[keyField] : ensureKey(_, index)}
@@ -523,8 +523,9 @@ export default defineComponent({
                   ]
                 )}
               </div>
-          ))}
-        {alwaysShowCreate ? create : null}
+          ))
+          : null}
+        {alwaysShowCreate || hasValue ? create : null}
       </div>
     )
   }
