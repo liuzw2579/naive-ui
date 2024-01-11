@@ -2,6 +2,10 @@
 
 ## Next Version
 
+## 1.2.3 [naive: 2.37.3] (2024-01-11)
+
+- `n-dynamic-input` 创建按钮传递正确的 `index`
+
 ## 1.2.2 [naive: 2.37.3] (2024-01-11)
 
 - 同步 naive-ui `2.37.3`
