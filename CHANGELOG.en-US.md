@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## NEXT_VERSION
+
+### Fixes
+
+- Fix `n-tree`'s `override-default-node-click-behavior` prop may conflict with default switcher click or checkbox click behavior.
+
+## 2.37.3
+
+### Fixes
+
+- Fix `n-split` has no color if it's not used in a card.
+
+## 2.37.2
+
+### Fixes
+
+- `n-data-table`'s `downloadCsv` method will export selection & expand column.
+
+## 2.37.1
+
+### Fixes
+
+- Click clear button on components with popup may trigger reopen behaviors.
+- Fix `n-form`'s `validate` returned `Promise` may not `resolve`.
+
+### Features
+
+- `n-collapse` adds `trigger-areas` prop.
+- `n-date-picker`'s `is-date-disabled` callback prop supports get detail info of date/year/month/quarter button as parameter, closes [#4649](https://github.com/tusen-ai/naive-ui/issues/4649).
+- `n-auto-complete` adds `empty` slot.
+- `n-auto-complete` adds `show-empty` prop.
+
 ## 2.37.0
 
 ### Breaking Changes
@@ -26,7 +58,7 @@
 - Fix `n-tabs`'s bar not hidden when `value` is set manually to the value other than the children `n-tab`s, closes [#5100](https://github.com/tusen-ai/naive-ui/issues/5100).
 - Fix `n-spin` abnormal animation, closes [#3556](https://github.com/tusen-ai/naive-ui/issues/3556).
 - Fix `n-avatar`'s lazy loading and `fallback-src` prop not working when load error in lazy, closes [#5007](https://github.com/tusen-ai/naive-ui/issues/5007).
-- Fix `n-split` has no color if it's not used in a card.
+- <del>Fix `n-split` has no color if it's not used in a card.</del>
 - Fix `n-card` `footer-class` prop not working.
 - Fix `n-tabs` may miss over-scroll shadow if `placement` is `'left'` or `'right'`.
 - Fix `n-date-picker` with range type can input start time that is later than end time, closes [#5544](https://github.com/tusen-ai/naive-ui/issues/5544).

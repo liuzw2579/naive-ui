@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## NEXT_VERSION
+
+### Fixes
+
+- 修复 `n-tree` 的 `override-default-node-click-behavior` 属性可能覆盖掉默认展开按钮和选中按钮的行为
+
+## 2.37.3
+
+### Fixes
+
+- 修复 `n-split` 不在卡片中使用没有颜色
+
+## 2.37.2
+
+### Fixes
+
+- `n-data-table` 的 `downloadCsv` 方法会导出选择列、展开列
+
+## 2.37.1
+
+### Fixes
+
+- 点击具有弹出菜单的组件的清空按钮时，可能会触发菜单的重复出现
+- `n-form` 的 `validate` 方法返回的 `Promise` 可能不会 `resolve`
+
+### Features
+
+- `n-collapse` 新增 `trigger-areas` 属性
+- `n-date-picker` 的 `is-date-disabled` 回调函数支持获取对应年、月、日、季度按钮的具体信息，关闭 [#4649](https://github.com/tusen-ai/naive-ui/issues/4649)
+- `n-auto-complete` 新增 `empty` 插槽
+- `n-auto-complete` 新增 `show-empty` 属性
+
 ## 2.37.0
 
 ### Breaking Changes
@@ -26,7 +58,7 @@
 - 修复 `n-tabs` 在 `value` 被设为没有对应标签页的值的时候指示条仍然展示，关闭 [#5100](https://github.com/tusen-ai/naive-ui/issues/5100)
 - 修复 `n-spin` 动画异常问题，关闭 [#3556](https://github.com/tusen-ai/naive-ui/issues/3556)
 - 修复 `n-avatar` 懒加载和懒加载失败时 `fallback-src` 属性都不生效，关闭 [#5007](https://github.com/tusen-ai/naive-ui/issues/5007)
-- 修复 `n-split` 不在卡片中使用没有颜色
+- <del>修复 `n-split` 不在卡片中使用没有颜色</del>
 - 修复 `n-card` 的 `footer-class` 属性不生效
 - 修复 `n-tabs` 在 `placement` 为 `'left'` 和 `'right'` 时初始化滚动阴影可能不正确
 - 修复 `n-date-picker` 在范围类型下，可以通过输入框使开始时间大于结束时间，关闭 [#5544](https://github.com/tusen-ai/naive-ui/issues/5544)

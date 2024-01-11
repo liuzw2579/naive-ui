@@ -2,6 +2,11 @@
 
 ## Next Version
 
+## 1.2.2 [naive: 2.37.3] (2024-01-11)
+
+- 同步 naive-ui `2.37.3`
+- `n-dynamic-input` 新增 `always-show-create` 属性
+
 ## 1.2.1 [naive: 2.37.0] (2024-01-08)
 
 - fix 文档
