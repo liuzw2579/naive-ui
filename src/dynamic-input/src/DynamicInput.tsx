@@ -525,7 +525,7 @@ export default defineComponent({
               </div>
           ))
           : null}
-        {alwaysShowCreate || hasValue ? create : null}
+        {alwaysShowCreate || !hasValue ? create : null}
       </div>
     )
   }

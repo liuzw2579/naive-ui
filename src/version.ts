@@ -1,3 +1,3 @@
 export const NAIVE_VERSION = '2.37.3'
-export const ITHINKDT_VERSION = '1.2.4'
+export const ITHINKDT_VERSION = '1.2.5'
 export default ITHINKDT_VERSION

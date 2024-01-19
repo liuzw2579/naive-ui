@@ -2,6 +2,10 @@
 
 ## Next Version
 
+## 1.2.5 [naive: 2.37.3] (2024-01-19)
+
+- `n-dynamic-input` 修复无数据默认无创建按钮
+
 ## 1.2.4 [naive: 2.37.3] (2024-01-11)
 
 - `n-dynamic-input` 修复创建按钮多一个
