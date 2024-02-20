@@ -2,6 +2,10 @@
 
 ## Next Version
 
+## 1.2.6 [naive: 2.37.3] (2024-02-20)
+
+- `n-icon` 属性 `component` 支持函数组件
+
 ## 1.2.5 [naive: 2.37.3] (2024-01-19)
 
 - `n-dynamic-input` 修复无数据默认无创建按钮
