@@ -294,6 +294,13 @@ export function createComponentMenuOptions ({ lang, theme, mode }) {
           zh: '水印',
           enSuffix: true,
           path: '/watermark'
+        },
+        {
+          en: 'Float Button',
+          zh: '浮动按钮',
+          enSuffix: true,
+          path: '/float-button',
+          isNew: true
         }
       ]
     }),
@@ -537,6 +544,13 @@ export function createComponentMenuOptions ({ lang, theme, mode }) {
           zh: '树',
           enSuffix: true,
           path: '/tree'
+        },
+        {
+          en: 'Infinite Scroll',
+          zh: '无限滚动',
+          enSuffix: true,
+          path: '/infinite-scroll',
+          isNew: true
         }
       ]
     }),

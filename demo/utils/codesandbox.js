@@ -20,9 +20,11 @@ const appVue = `<template>
 <n-loading-bar-provider>
   <n-message-provider>
     <n-notification-provider>
-      <n-dialog-provider>
-        <demo />
-      </n-dialog-provider>
+      <n-modal-provider>
+        <n-dialog-provider>
+          <demo />
+        </n-dialog-provider>
+      </n-modal-provider>
     </n-notification-provider>
   </n-message-provider>
 </n-loading-bar-provider>
@@ -66,8 +68,8 @@ export function getCodeSandboxParams (code) {
         content: {
           dependencies: {
             ...getDeps(code),
-            vue: 'next',
-            'vue-router': 'next',
+            vue: 'latest',
+            'vue-router': 'latest',
             'ithinkdt-ui': 'latest'
           },
           devDependencies: {

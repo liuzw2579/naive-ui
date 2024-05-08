@@ -3,6 +3,7 @@ import { NMessageProvider } from '../../message'
 import { NDialogProvider } from '../../dialog'
 import { NNotificationProvider } from '../../notification'
 import { NLoadingBarProvider } from '../../loading-bar'
+import { NModalProvider } from '../../modal/src/ModalProvider'
 import { createDiscreteApp } from './discreteApp'
 import type {
   DiscreteApi,
@@ -17,7 +18,8 @@ export function createDiscreteApi<T extends DiscreteApiType> (
     messageProviderProps,
     dialogProviderProps,
     notificationProviderProps,
-    loadingBarProviderProps
+    loadingBarProviderProps,
+    modalProviderProps
   }: DiscreteApiOptions = {}
 ): DiscreteApi<T> {
   const providersAndProps: Array<{
@@ -56,6 +58,12 @@ export function createDiscreteApi<T extends DiscreteApiType> (
           props: loadingBarProviderProps
         })
         break
+      case 'modal':
+        providersAndProps.push({
+          type,
+          Provider: NModalProvider,
+          props: modalProviderProps
+        })
     }
   })
 

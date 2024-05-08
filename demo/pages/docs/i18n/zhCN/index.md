@@ -52,6 +52,7 @@ ithinkdt-ui 通过使用 `n-config-provider` 调整语言，默认情况下所�
 | 英语               | enUS | dateEnUS |        |
 | 世界语             | eo   | dateEo   | 2.25.2 |
 | 西班牙语（阿根廷） | esAR | dateEsAR | 2.24.2 |
+| 爱沙尼亚语         | etEE | dateEtEE | 2.38.0 |
 | 波斯语             | faIR | dateFaIR | 2.34.4 |
 | 法语               | frFR | dateFrFR |        |
 | 印度尼西亚语       | idID | dateIdID |        |

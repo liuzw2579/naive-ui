@@ -559,6 +559,16 @@ export const enComponentRoutes = [
   {
     path: 'split',
     component: () => import('../../src/split/demos/enUS/index.demo-entry.md')
+  },
+  {
+    path: 'infinite-scroll',
+    component: () =>
+      import('../../src/infinite-scroll/demos/enUS/index.demo-entry.md')
+  },
+  {
+    path: 'float-button',
+    component: () =>
+      import('../../src/float-button/demos/enUS/index.demo-entry.md')
   }
 ]
 
@@ -953,6 +963,16 @@ export const zhComponentRoutes = [
   {
     path: 'split',
     component: () => import('../../src/split/demos/zhCN/index.demo-entry.md')
+  },
+  {
+    path: 'infinite-scroll',
+    component: () =>
+      import('../../src/infinite-scroll/demos/zhCN/index.demo-entry.md')
+  },
+  {
+    path: 'float-button',
+    component: () =>
+      import('../../src/float-button/demos/zhCN/index.demo-entry.md')
   }
 ]
 

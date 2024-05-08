@@ -4,14 +4,19 @@ import {
   type PropType,
   ref,
   computed,
-  type CSSProperties
+  type CSSProperties,
+  watchEffect,
+  toRef
 } from 'vue'
 import { off, on } from 'evtd'
-import { type ExtractPublicPropTypes, resolveSlot } from '../../_utils'
+import { useMergedState } from 'vooks'
+import { type ExtractPublicPropTypes, resolveSlot, call } from '../../_utils'
 import useConfig from '../../_mixins/use-config'
+import { type ThemeProps, useTheme, useThemeClass } from '../../_mixins'
 import style from './styles/index.cssr'
-import { type ThemeProps, useTheme } from '../../_mixins'
 import { type SplitTheme, splitLight } from '../styles'
+import { type SplitOnUpdateSize } from './types'
+import { depx } from 'seemly'
 
 export const splitProps = {
   ...(useTheme.props as ThemeProps<SplitTheme>),
@@ -25,20 +30,32 @@ export const splitProps = {
   },
   disabled: Boolean,
   defaultSize: {
-    type: Number,
+    type: [String, Number] as PropType<string | number>,
     default: 0.5
   },
+  'onUpdate:size': [Function, Array] as PropType<
+  SplitOnUpdateSize | SplitOnUpdateSize[]
+  >,
+  onUpdateSize: [Function, Array] as PropType<
+  SplitOnUpdateSize | SplitOnUpdateSize[]
+  >,
+  size: [String, Number] as PropType<string | number>,
   min: {
-    type: Number,
+    type: [String, Number] as PropType<string | number>,
     default: 0
   },
   max: {
-    type: Number,
+    type: [String, Number] as PropType<string | number>,
     default: 1
   },
+  pane1Class: String,
+  pane1Style: [Object, String] as PropType<CSSProperties | string>,
+  pane2Class: String,
+  pane2Style: [Object, String] as PropType<CSSProperties | string>,
   onDragStart: Function as PropType<(e: Event) => void>,
   onDragMove: Function as PropType<(e: Event) => void>,
-  onDragEnd: Function as PropType<(e: Event) => void>
+  onDragEnd: Function as PropType<(e: Event) => void>,
+  watchProps: Array as PropType<Array<'defaultSize'>>
 } as const
 
 export type SplitProps = ExtractPublicPropTypes<typeof splitProps>
@@ -48,7 +65,6 @@ export default defineComponent({
   props: splitProps,
   setup (props) {
     const { mergedClsPrefixRef, inlineThemeDisabled } = useConfig(props)
-
     const themeRef = useTheme(
       'Split',
       '-split',
@@ -69,15 +85,35 @@ export default defineComponent({
         '--n-resize-trigger-color-hover': resizableTriggerColorHover
       }
     })
-
     const resizeTriggerElRef = ref<HTMLElement | null>(null)
     const isDraggingRef = ref(false)
-    const currentSize = ref(props.defaultSize)
+    const controlledSizeRef = toRef(props, 'size')
+    const uncontrolledSizeRef = ref(props.defaultSize)
+    if (props.watchProps?.includes('defaultSize')) {
+      watchEffect(() => (uncontrolledSizeRef.value = props.defaultSize))
+    }
+    // use to update controlled or uncontrolled values
+    const doUpdateSize = (size: number | string): void => {
+      const _onUpdateSize = props['onUpdate:size']
+      if (props.onUpdateSize) call(props.onUpdateSize, size as string & number)
+      if (_onUpdateSize) call(_onUpdateSize, size as string & number)
+      uncontrolledSizeRef.value = size
+    }
+    const mergedSizeRef = useMergedState(controlledSizeRef, uncontrolledSizeRef)
 
     const firstPaneStyle = computed(() => {
-      const size = currentSize.value * 100
-      return {
-        flex: `0 0 calc(${size}% - ${(props.resizeTriggerSize * size) / 100}px)`
+      const sizeValue = mergedSizeRef.value
+      if (typeof sizeValue === 'string') {
+        return {
+          flex: `0 0 ${sizeValue}`
+        }
+      } else if (typeof sizeValue === 'number') {
+        const size = sizeValue * 100
+        return {
+          flex: `0 0 calc(${size}% - ${
+            (props.resizeTriggerSize * size) / 100
+          }px)`
+        }
       }
     })
 
@@ -133,30 +169,55 @@ export default defineComponent({
           offset = elRect.top - e.clientY
         }
       }
-
       updateSize(e)
     }
 
     const updateSize = (event: MouseEvent): void => {
-      const parentRect =
+      const containerRect =
         resizeTriggerElRef.value?.parentElement?.getBoundingClientRect()
-      if (!parentRect) return
-      const newSize =
-        props.direction === 'horizontal'
-          ? (event.clientX - parentRect.left - offset) /
-            (parentRect.width - props.resizeTriggerSize)
-          : (event.clientY - parentRect.top + offset) /
-            (parentRect.height - props.resizeTriggerSize)
-      currentSize.value = newSize
-      if (props.min) {
-        currentSize.value = Math.max(newSize, props.min)
-      }
-      if (props.max) {
-        currentSize.value = Math.min(currentSize.value, props.max)
+      if (!containerRect) return
+
+      const { direction } = props
+
+      const containerUsableWidth = containerRect.width - props.resizeTriggerSize
+      const containerUsableHeight =
+        containerRect.height - props.resizeTriggerSize
+      const containerUsableSize =
+        direction === 'horizontal'
+          ? containerUsableWidth
+          : containerUsableHeight
+
+      const newPxSize =
+        direction === 'horizontal'
+          ? event.clientX - containerRect.left - offset
+          : event.clientY - containerRect.top + offset
+
+      const { min, max } = props
+
+      const pxMin =
+        typeof min === 'string' ? depx(min) : min * containerUsableSize
+      const pxMax =
+        typeof max === 'string' ? depx(max) : max * containerUsableSize
+
+      let nextPxSize = newPxSize
+      nextPxSize = Math.max(nextPxSize, pxMin)
+      nextPxSize = Math.min(nextPxSize, pxMax, containerUsableSize)
+      // in pixel mode
+      if (typeof mergedSizeRef.value === 'string') {
+        doUpdateSize(`${nextPxSize}px`)
+      } else {
+        // in percentage mode
+        doUpdateSize(nextPxSize / containerUsableSize)
       }
     }
 
+    const themeClassHandle = inlineThemeDisabled
+      ? useThemeClass('split', undefined, cssVarsRef, props)
+      : undefined
+
     return {
+      themeClass: themeClassHandle?.themeClass,
+      onRender: themeClassHandle?.onRender,
       cssVars: inlineThemeDisabled ? undefined : cssVarsRef,
       resizeTriggerElRef,
       isDragging: isDraggingRef,
@@ -168,17 +229,19 @@ export default defineComponent({
     }
   },
   render () {
+    this.onRender?.()
     return (
       <div
         class={[
           `${this.mergedClsPrefix}-split`,
-          `${this.mergedClsPrefix}-split--${this.direction}`
+          `${this.mergedClsPrefix}-split--${this.direction}`,
+          this.themeClass
         ]}
         style={this.cssVars as CSSProperties}
       >
         <div
-          class={`${this.mergedClsPrefix}-split-pane-1`}
-          style={this.firstPaneStyle}
+          class={[`${this.mergedClsPrefix}-split-pane-1`, this.pane1Class]}
+          style={[this.firstPaneStyle, this.pane1Style]}
         >
           {this.$slots[1]?.()}
         </div>
@@ -201,7 +264,10 @@ export default defineComponent({
             ])}
           </div>
         )}
-        <div class={`${this.mergedClsPrefix}-split-pane-2`}>
+        <div
+          class={[`${this.mergedClsPrefix}-split-pane-2`, this.pane2Class]}
+          style={this.pane2Style}
+        >
           {this.$slots[2]?.()}
         </div>
       </div>

@@ -13,6 +13,7 @@ after-select.vue
 show-options-by-value.vue
 customized-rendering.vue
 status.vue
+append.vue
 ```
 
 ## API
@@ -21,13 +22,14 @@ status.vue
 
 | 名称 | 类型 | 默认值 | 说明 | 版本 |
 | --- | --- | --- | --- | --- |
+| append | `boolean` | `false` | 选中后是否追加 | 2.38.0 |
 | blur-after-select | `boolean` | `false` | 选中后是否 blur |  |
 | clear-after-select | `boolean` | `false` | 选中后是否清空 |  |
 | clearable | `boolean` | `false` | 自动填充是否支持可清除 |  |
 | default-value | `string` | `null` | 自动填充的默认值 |  |
 | disabled | `boolean` | `false` | 自动填充是否禁用 |  |
 | get-show | `(value: string) => boolean` | `undefined` | 根据输入值在聚焦的状态中决定是否显示菜单 |  |
-| input-props | `HTMLInputAttributes` | `undefined` | 自动填充中 input 元素的属性 |  |
+| input-props | `InputHTMLAttributes` | `undefined` | 自动填充中 input 元素的属性 |  |
 | loading | `boolean` | `false` | 是否展示加载状态 |  |
 | menu-props | `HTMLAttributes` | `undefined` | 菜单的 DOM 属性 | 2.32.2 |
 | options | `Array<string \| AutoCompleteOption \| AutoCompleteGroupOption>` | `[]` | 自动填充的自定义选项 |  |

@@ -13,6 +13,7 @@ after-select.vue
 show-options-by-value.vue
 customized-rendering.vue
 status.vue
+append.vue
 ```
 
 ## API
@@ -21,13 +22,14 @@ status.vue
 
 | Name | Type | Default | Description | Version |
 | --- | --- | --- | --- | --- |
+| append | `boolean` | `false` | Whether to append content to input. | 2.38.0 |
 | blur-after-select | `boolean` | `false` | Whether to blur after selection. |  |
 | clear-after-select | `boolean` | `false` | Whether to clear after selection. |  |
 | clearable | `boolean` | `false` | Whether autocomplete is clearable. |  |
 | default-value | `string` | `null` | Default value of autocomplete. |  |
 | disabled | `boolean` | `false` | Whether the autocomplete is disabled. |  |
 | get-show | `(value: string) => boolean` | `undefined` | Use the input to determine whether to show options on focus. |  |
-| input-props | `HTMLInputAttributes` | `undefined` | The attributes of input element in autocomplete. |  |
+| input-props | `InputHTMLAttributes` | `undefined` | The attributes of input element in autocomplete. |  |
 | loading | `boolean` | `false` | Whether to show a loading status. |  |
 | menu-props | `HTMLAttributes` | `undefined` | The menu's dom props. | 2.32.2 |
 | options | `Array<string \| AutoCompleteOption \| AutoCompleteGroupOption>` | `[]` | Options to autocomplete from. |  |

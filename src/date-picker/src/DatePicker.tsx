@@ -113,7 +113,7 @@ export const datePickerProps = {
   endPlaceholder: String,
   format: String,
   dateFormat: String,
-  timeFormat: String,
+  timerPickerFormat: String,
   actions: Array as PropType<Array<'clear' | 'confirm' | 'now'> | null>,
   shortcuts: Object as PropType<Shortcuts>,
   isDateDisabled: Function as PropType<IsDateDisabled>,
@@ -1022,12 +1022,18 @@ export default defineComponent({
       onNextMonth: this.onNextMonth,
       onPrevMonth: this.onPrevMonth,
       onNextYear: this.onNextYear,
-      onPrevYear: this.onPrevYear
+      onPrevYear: this.onPrevYear,
+      timerPickerFormat: this.timerPickerFormat
     }
     const renderPanel = (): VNode => {
       const { type } = this
       return type === 'datetime' ? (
-        <DatetimePanel {...commonPanelProps}>{$slots}</DatetimePanel>
+        <DatetimePanel
+          {...commonPanelProps}
+          defaultCalendarStartTime={this.defaultCalendarStartTime}
+        >
+          {$slots}
+        </DatetimePanel>
       ) : type === 'daterange' ? (
         <DaterangePanel
           {...commonPanelProps}
@@ -1053,7 +1059,11 @@ export default defineComponent({
         type === 'quarterrange' ? (
         <MonthRangePanel {...commonPanelProps} type={type} />
           ) : (
-        <DatePanel {...commonPanelProps} type={type}>
+        <DatePanel
+          {...commonPanelProps}
+          type={type}
+          defaultCalendarStartTime={this.defaultCalendarStartTime}
+        >
           {$slots}
         </DatePanel>
           )

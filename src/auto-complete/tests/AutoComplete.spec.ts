@@ -100,6 +100,31 @@ describe('n-auto-complete', () => {
     wrapper.unmount()
   })
 
+  it('should work with `append` prop and `getShow` prop', async () => {
+    const options: AutoCompleteProps['options'] = [
+      'gmail.com',
+      '163.com',
+      'qq.com'
+    ].map((suffix) => {
+      return {
+        label: suffix,
+        value: suffix
+      }
+    })
+    const wrapper = mount(NAutoComplete)
+    await wrapper.setProps({
+      getShow: (value: string | null) => {
+        return !!value?.endsWith('@')
+      },
+      options
+    })
+    expect(document.querySelector('.n-auto-complete-menu')).toEqual(null)
+    wrapper.find('input').setValue('@')
+    await wrapper.find('input').trigger('focus')
+    expect(document.querySelector('.n-auto-complete-menu')).not.toEqual(null)
+    wrapper.unmount()
+  })
+
   it('should work with `input-props` prop', async () => {
     const wrapper = mount(NAutoComplete, {
       props: {
