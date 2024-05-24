@@ -2,6 +2,12 @@
 
 ## Next Version
 
+## 1.3.1 [naive: 2.38.2] (2024-05-24)
+
+### Fixes
+
+- 修复 `generateCsv` 渲染标题 title 为 function 类型时的错误
+
 ## 1.3.0 [naive: 2.38.2] (2024-05-08)
 
 - 同步 naive-ui `2.38.2`
