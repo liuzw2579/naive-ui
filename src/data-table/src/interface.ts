@@ -253,6 +253,7 @@ export type TableColumnGroup<T = InternalRowData> = {
 
 export type TableBaseColumn<T = InternalRowData> = {
   title?: TableColumnTitle
+  csvTitle?: string | ((column: TableBaseColumn) => string)
   titleColSpan?: number
   // for compat maybe default
   type?: never

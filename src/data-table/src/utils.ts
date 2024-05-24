@@ -189,7 +189,7 @@ export function generateCsv (columns: TableColumn[], data: RowData[]): string {
     (column) => column.type !== 'expand' && column.type !== 'selection'
   )
   const header = exportableColumns
-    .map((col: any) => toValue(col.title))
+    .map((col: any) => toValue(col.csvTitle ?? col.title))
     .join(',')
   const rows = data.map((row) => {
     return exportableColumns
