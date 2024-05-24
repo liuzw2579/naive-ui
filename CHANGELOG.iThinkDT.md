@@ -2,6 +2,12 @@
 
 ## Next Version
 
+## 1.3.2 [naive: 2.38.2] (2024-05-24)
+
+### Features
+
+- `n-data-table` 列配置增加 `csvTitle` 字段
+
 ## 1.3.1 [naive: 2.38.2] (2024-05-24)
 
 ### Fixes
