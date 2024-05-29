@@ -576,7 +576,7 @@ function createFixedColumnStyle (): CNode[] {
     cM('fixed-left', `
       left: 0;
       position: sticky;
-      z-index: 2;
+      z-index: 3;
     `, [
       c('&::after', `
         pointer-events: none;
@@ -593,7 +593,7 @@ function createFixedColumnStyle (): CNode[] {
     cM('fixed-right', `
       right: 0;
       position: sticky;
-      z-index: 1;
+      z-index: 2;
     `, [
       c('&::before', `
         pointer-events: none;
