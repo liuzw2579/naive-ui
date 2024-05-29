@@ -2,6 +2,12 @@
 
 ## Next Version
 
+## 1.3.3 [naive: 2.38.2] (2024-05-29)
+
+### Fixes
+
+- 修复 `n-data-table` 列 `fixed` 时，会被 `Upload` 的图片遮挡
+
 ## 1.3.2 [naive: 2.38.2] (2024-05-24)
 
 ### Features
