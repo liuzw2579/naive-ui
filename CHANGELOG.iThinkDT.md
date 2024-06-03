@@ -2,6 +2,12 @@
 
 ## Next Version
 
+## 1.3.4 [naive: 2.38.2] (2024-05-31)
+
+### Fixes
+
+- 修复 `n-data-table` 列 `fixed` 时，thead 被遮挡
+
 ## 1.3.3 [naive: 2.38.2] (2024-05-29)
 
 ### Fixes
