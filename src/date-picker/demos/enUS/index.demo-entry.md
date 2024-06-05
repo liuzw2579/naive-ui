@@ -101,7 +101,7 @@ panel.vue
 
 | Name | Type | Default | Description | Version |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | Operations supported for the `daterange` type date picker. |  |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | Operations supported for the `daterange` type date picker. |  |
 | bind-calendar-months | `boolean` | `false` | Whether months in panel calendar are consecutive. | 2.28.3 |
 | default-calendar-start-time | `number` | `undefined` | Default panel calendar start month timestamp. | 2.28.3 |
 | default-calendar-end-time | `number` | `undefined` | Default panel calendar end month timestamp. | 2.28.3 |
@@ -120,7 +120,7 @@ panel.vue
 
 | Name | Type | Default | Description | Version |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | Operations supported for the `datetimerange` type. |  |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | Operations supported for the `datetimerange` type. |  |
 | bind-calendar-months | `boolean` | `false` | Whether months in panel calendar are consecutive. | 2.28.3 |
 | default-calendar-start-time | `number` | `undefined` | Default panel calendar start month timestamp. | 2.28.3 |
 | default-calendar-end-time | `number` | `undefined` | Default panel calendar end month timestamp. | 2.28.3 |
@@ -151,7 +151,7 @@ panel.vue
 
 | Name | Type | Default | Description | Version |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | Operations supported for the `monthrange` type date picker. | 2.28.3 |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | Operations supported for the `monthrange` type date picker. | 2.28.3 |
 | end-placeholder | `string` | `'End Month'` | Placeholder at end part of the input. | 2.28.3 |
 | format | `string` | `'yyyy-MM-dd'` | Format of the input. For detail please see [format](https://date-fns.org/v2.23.0/docs/format). | 2.28.3 |
 | close-on-select | `boolean` | `false` | Whether to close the panel after the user has selected a time range. | 2.28.3 |

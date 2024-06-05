@@ -174,16 +174,6 @@ export default defineComponent({
                 })}
             </div>
             <div class={`${mergedClsPrefix}-date-panel-actions__suffix`}>
-              {this.actions?.includes('clear') ? (
-                <NButton
-                  theme={mergedTheme.peers.Button}
-                  themeOverrides={mergedTheme.peerOverrides.Button}
-                  size="tiny"
-                  onClick={this.handleClearClick}
-                >
-                  {{ default: () => this.locale.clear }}
-                </NButton>
-              ) : null}
               {this.actions?.includes('now') ? (
                 <NButton
                   theme={mergedTheme.peers.Button}
@@ -192,6 +182,16 @@ export default defineComponent({
                   onClick={this.handleNowClick}
                 >
                   {{ default: () => this.locale.now }}
+                </NButton>
+              ) : null}
+              {this.actions?.includes('clear') ? (
+                <NButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={this.handleClearClick}
+                >
+                  {{ default: () => this.locale.clear }}
                 </NButton>
               ) : null}
               {/** we don't need a confirm button for date picking */}

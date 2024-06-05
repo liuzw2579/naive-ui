@@ -102,7 +102,7 @@ form-debug.vue
 
 | 名称 | 类型 | 默认值 | 说明 | 版本 |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | DateRange 类型的 Date Picker 中支持的用户操作 |  |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | DateRange 类型的 Date Picker 中支持的用户操作 |  |
 | bind-calendar-months | `boolean` | `false` | 面板月份是否连续 | 2.28.3 |
 | default-calendar-start-time | `number` | `undefined` | 面板日历默认开始的月份时间戳 | 2.28.3 |
 | default-calendar-end-time | `number` | `undefined` | 面板日历默认结束的月份时间戳 | 2.28.3 |
@@ -120,7 +120,7 @@ form-debug.vue
 
 | 名称 | 类型 | 默认值 | 说明 | 版本 |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | DateTimeRange 类型的 Date Picker 中支持的用户操作 |  |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | DateTimeRange 类型的 Date Picker 中支持的用户操作 |  |
 | bind-calendar-months | `boolean` | `false` | 面板月份是否连续 | 2.28.3 |
 | default-calendar-start-time | `number` | `undefined` | 面板日历默认开始的月份时间戳 | 2.28.3 |
 | default-calendar-end-time | `number` | `undefined` | 面板日历默认结束的月份时间戳 | 2.28.3 |
@@ -151,7 +151,7 @@ form-debug.vue
 
 | 名称 | 类型 | 默认值 | 说明 | 版本 |
 | --- | --- | --- | --- | --- |
-| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm']` | MonthRange 类型的 Date Picker 中支持的用户操作 | 2.28.3 |
+| actions | `Array<'clear' \| 'confirm'> \| null` | `['clear', 'confirm', 'now']` | MonthRange 类型的 Date Picker 中支持的用户操作 | 2.28.3 |
 | end-placeholder | `string` | `'结束月份'` | MonthRange 中 end 选框的提示信息 | 2.28.3 |
 | format | `string` | `'yyyy-MM-dd'` | 时间格式化字符串，详情见 [format](https://date-fns.org/v2.23.0/docs/format) | 2.28.3 |
 | close-on-select | `boolean` | `false` | 用户选择时间范围后是否自动关闭面板 | 2.28.3 |

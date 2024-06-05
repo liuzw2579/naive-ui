@@ -735,29 +735,30 @@ function useDualCalendar (
   }
   // only for monthrange
   function handleColItemClick (
-    dateItem: MonthItem | QuarterItem | YearItem,
+    dataType: MonthItem['type'] | QuarterItem['type'] | YearItem['type'],
+    ts: number,
     clickType: 'start' | 'end'
   ): void {
     const { value } = props
     const noCurrentValue = !Array.isArray(value)
     const itemTs =
-      dateItem.type === 'year' && type !== 'yearrange'
+      dataType === 'year' && type !== 'yearrange'
         ? noCurrentValue
-          ? set(dateItem.ts, {
+          ? set(ts, {
             month: getMonth(
               type === 'quarterrange'
                 ? startOfQuarter(new Date())
                 : new Date()
             )
           }).valueOf()
-          : set(dateItem.ts, {
+          : set(ts, {
             month: getMonth(
               type === 'quarterrange'
                 ? startOfQuarter(value[clickType === 'start' ? 0 : 1])
                 : value[clickType === 'start' ? 0 : 1]
             )
           }).valueOf()
-        : dateItem.ts
+        : ts
     if (noCurrentValue) {
       const partialValue = sanitizeValue(itemTs)
       const nextValue: [number, number] = [partialValue, partialValue]

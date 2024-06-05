@@ -2,7 +2,6 @@ import {
   defineComponent,
   h,
   renderSlot,
-  watchEffect,
   type PropType,
   type VNode,
   onMounted
@@ -11,7 +10,6 @@ import { VirtualList } from 'vueuc'
 import { useLocale } from '../../../_mixins'
 import { NxButton } from '../../../button'
 import { NBaseFocusDetector, NScrollbar } from '../../../_internal'
-import { warnOnce } from '../../../_utils'
 import {
   type MonthItem,
   type QuarterItem,
@@ -33,18 +31,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    if (__DEV__) {
-      watchEffect(() => {
-        if (props.actions?.includes('now')) {
-          warnOnce(
-            'date-picker',
-            'The `now` action is not supported for n-date-picker of ' +
-              `${props.type}` +
-              'type'
-          )
-        }
-      })
-    }
     const useCalendarRef = useDualCalendar(props, props.type)
     const { dateLocaleRef } = useLocale('DatePicker')
     const renderItem = (
@@ -73,7 +59,7 @@ export default defineComponent({
             disabled
               ? undefined
               : () => {
-                  handleColItemClick(item, type)
+                  handleColItemClick(item.type, item.ts, type)
                 }
           }
         >
@@ -274,6 +260,27 @@ export default defineComponent({
         {this.actions?.length || shortcuts ? (
           <div class={`${mergedClsPrefix}-date-panel-actions`}>
             <div class={`${mergedClsPrefix}-date-panel-actions__prefix`}>
+              {this.actions?.includes('now') ? (
+                <NxButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={() => {
+                    const now = Date.now()
+                    this.handleColItemClick(
+                      this.type === 'yearrange'
+                        ? 'year'
+                        : this.type === 'monthrange'
+                          ? 'month'
+                          : 'quarter',
+                      now,
+                      'start'
+                    )
+                  }}
+                >
+                  {{ default: () => this.locale.now }}
+                </NxButton>
+              ) : null}
               {shortcuts &&
                 Object.keys(shortcuts).map((key) => {
                   const shortcut = shortcuts[key]
@@ -297,6 +304,27 @@ export default defineComponent({
                 })}
             </div>
             <div class={`${mergedClsPrefix}-date-panel-actions__suffix`}>
+              {this.actions?.includes('now') ? (
+                <NxButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={() => {
+                    const now = Date.now()
+                    this.handleColItemClick(
+                      this.type === 'yearrange'
+                        ? 'year'
+                        : this.type === 'monthrange'
+                          ? 'month'
+                          : 'quarter',
+                      now,
+                      'end'
+                    )
+                  }}
+                >
+                  {{ default: () => this.locale.now }}
+                </NxButton>
+              ) : null}
               {this.actions?.includes('clear') ? (
                 <NxButton
                   theme={mergedTheme.peers.Button}

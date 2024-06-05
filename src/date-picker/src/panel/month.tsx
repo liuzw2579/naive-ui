@@ -235,16 +235,6 @@ export default defineComponent({
                 })}
             </div>
             <div class={`${mergedClsPrefix}-date-panel-actions__suffix`}>
-              {actions?.includes('clear') ? (
-                <NButton
-                  theme={mergedTheme.peers.Button}
-                  themeOverrides={mergedTheme.peerOverrides.Button}
-                  size="tiny"
-                  onClick={this.handleClearClick}
-                >
-                  {{ default: () => this.locale.clear }}
-                </NButton>
-              ) : null}
               {actions?.includes('now') ? (
                 <NButton
                   theme={mergedTheme.peers.Button}
@@ -253,6 +243,16 @@ export default defineComponent({
                   onClick={this.handleNowClick}
                 >
                   {{ default: () => this.locale.now }}
+                </NButton>
+              ) : null}
+              {actions?.includes('clear') ? (
+                <NButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={this.handleClearClick}
+                >
+                  {{ default: () => this.locale.clear }}
                 </NButton>
               ) : null}
               {actions?.includes('confirm') ? (

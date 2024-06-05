@@ -1,4 +1,4 @@
-import { defineComponent, h, watchEffect } from 'vue'
+import { defineComponent, h } from 'vue'
 import { NButton, NxButton } from '../../../button'
 import { NInput } from '../../../input'
 import { NTimePicker } from '../../../time-picker'
@@ -9,7 +9,7 @@ import {
   FastForwardIcon
 } from '../../../_internal/icons'
 import { NBaseFocusDetector } from '../../../_internal'
-import { resolveSlot, warnOnce } from '../../../_utils'
+import { resolveSlot } from '../../../_utils'
 import { useDualCalendar, useDualCalendarProps } from './use-dual-calendar'
 import PanelHeader from './panelHeader'
 
@@ -17,16 +17,6 @@ export default defineComponent({
   name: 'DateTimeRangePanel',
   props: useDualCalendarProps,
   setup (props) {
-    if (__DEV__) {
-      watchEffect(() => {
-        if (props.actions?.includes('now')) {
-          warnOnce(
-            'date-picker',
-            'The `now` action is not supported for n-date-picker of `datetimerange` type'
-          )
-        }
-      })
-    }
     return useDualCalendar(props, 'datetimerange')
   },
   render () {
@@ -323,6 +313,27 @@ export default defineComponent({
         {this.actions?.length || shortcuts ? (
           <div class={`${mergedClsPrefix}-date-panel-actions`}>
             <div class={`${mergedClsPrefix}-date-panel-actions__prefix`}>
+              {this.actions?.includes('now') ? (
+                <NButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={() => {
+                    const now = Date.now()
+                    if (Array.isArray(this.value)) {
+                      this.changeStartEndTime(
+                        now,
+                        Math.max(this.value[1], now),
+                        'done'
+                      )
+                    } else {
+                      this.changeStartEndTime(now, now, 'done')
+                    }
+                  }}
+                >
+                  {{ default: () => this.locale.now }}
+                </NButton>
+              ) : null}
               {shortcuts &&
                 Object.keys(shortcuts).map((key) => {
                   const shortcut = shortcuts[key]
@@ -346,6 +357,27 @@ export default defineComponent({
                 })}
             </div>
             <div class={`${mergedClsPrefix}-date-panel-actions__suffix`}>
+              {this.actions?.includes('now') ? (
+                <NButton
+                  theme={mergedTheme.peers.Button}
+                  themeOverrides={mergedTheme.peerOverrides.Button}
+                  size="tiny"
+                  onClick={() => {
+                    const now = Date.now()
+                    if (Array.isArray(this.value)) {
+                      this.changeStartEndTime(
+                        Math.min(this.value[0], now),
+                        now,
+                        'done'
+                      )
+                    } else {
+                      this.changeStartEndTime(now, now, 'done')
+                    }
+                  }}
+                >
+                  {{ default: () => this.locale.now }}
+                </NButton>
+              ) : null}
               {this.actions?.includes('clear') ? (
                 <NButton
                   theme={mergedTheme.peers.Button}
