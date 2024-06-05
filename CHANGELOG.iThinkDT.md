@@ -2,6 +2,12 @@
 
 ## Next Version
 
+## 1.3.5 [naive: 2.38.2] (2024-06-05)
+
+### Features
+
+- `n-data-picker` range 范围选择支持 `now` 操作
+
 ## 1.3.4 [naive: 2.38.2] (2024-05-31)
 
 ### Fixes
