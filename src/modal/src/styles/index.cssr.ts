@@ -15,7 +15,11 @@ export default c([
     height: 0;
     width: 0;
     display: flex;
-  `),
+  `, [
+    c('> *', `
+      pointer-events: all;
+    `)
+  ]),
   cB('modal-mask', `
     position: fixed;
     left: 0;

@@ -13,6 +13,7 @@ import globalStyle from '../_styles/global/index.cssr'
 import { configProviderInjectionKey } from '../config-provider/src/context'
 import type { GlobalTheme } from '../config-provider'
 import type { ThemeCommonVars } from '../_styles/common'
+import { cNS } from '../_utils/cssr'
 import { cssrAnchorMetaName } from './common'
 
 export interface Theme<N, T = Record<string, unknown>, R = any> {
@@ -94,13 +95,21 @@ function useTheme<N, T, R>(
   const ssrAdapter = useSsrAdapter()
   const NConfigProvider = inject(configProviderInjectionKey, null)
   if (style) {
+    const nsPrefix = NConfigProvider?.styleIsolate
+      ? NConfigProvider.mergedNamespaceRef.value
+      : undefined
+    if (nsPrefix) {
+      style = cNS(`:where(.${nsPrefix})`, [style])
+    }
+
     const mountStyle = (): void => {
       const clsPrefix = clsPrefixRef?.value
-      style.mount({
-        id: clsPrefix === undefined ? mountId : clsPrefix + mountId,
+      style!.mount({
+        id: `${nsPrefix ? `${nsPrefix}-` : ''}${clsPrefix === undefined ? mountId : clsPrefix + mountId}`,
         head: true,
         props: {
-          bPrefix: clsPrefix ? `.${clsPrefix}-` : undefined
+          bPrefix: clsPrefix ? `.${clsPrefix}-` : undefined,
+          nsPrefix: nsPrefix ? `${nsPrefix}-` : ''
         },
         anchorMetaName: cssrAnchorMetaName,
         ssr: ssrAdapter,
